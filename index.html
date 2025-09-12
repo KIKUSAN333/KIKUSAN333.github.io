@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ウェブサイトテンプレート</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>サイト名</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#about">について</a></li>
+                <li><a href="#projects">プロジェクト</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">メインタイトル</h2>
+                <p class="hero-subtitle">サブタイトルをここに記入</p>
+                <button class="cta-button">ボタンテキスト</button>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">セクションタイトル</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>ここに説明文を記入してください。</p>
+                    </div>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">🎨</div>
+                            <h3>特徴1</h3>
+                            <p>説明文</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">⚡</div>
+                            <h3>特徴2</h3>
+                            <p>説明文</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📱</div>
+                            <h3>特徴3</h3>
+                            <p>説明文</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">プロジェクト</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="placeholder-image">画像1</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>プロジェクト1</h3>
+                            <p>プロジェクトの説明</p>
+                            <a href="#" class="project-link">詳細を見る</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="placeholder-image">画像2</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>プロジェクト2</h3>
+                            <p>プロジェクトの説明</p>
+                            <a href="#" class="project-link">詳細を見る</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="placeholder-image">画像3</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>プロジェクト3</h3>
+                            <p>プロジェクトの説明</p>
+                            <a href="#" class="project-link">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">お問い合わせ</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>お問い合わせ</h3>
+                        <p>お気軽にお問い合わせください。</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="contact-label">Email:</span>
+                                <span class="contact-value">example@email.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">電話:</span>
+                                <span class="contact-value">000-0000-0000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">お名前</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">メールアドレス</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">メッセージ</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">送信する</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 サイト名. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // フォーム送信
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('お問い合わせありがとうございます！');
+        });
+    </script>
+</body>
+</html>
