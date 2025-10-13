@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日報入力 - 日報システム</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>日報システム</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">ホームへ戻る</a></li>
+                <li id="user-area" style="display:none;"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="report-section">
+            <div class="container">
+                <h2 class="section-title">日報入力</h2>
+                <div class="entry-type-select" style="margin-bottom:1rem; text-align:center;">
+                    <button type="button" id="entry-sales" class="secondary-button">売上を記録</button>
+                    <button type="button" id="entry-event" class="secondary-button">イベントを記録</button>
+                </div>
+
+                <form id="report-form" class="report-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="store">店舗名</label>
+                            <input type="text" id="store" name="store" placeholder="例: 新宿店" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="staff">担当スタッフ名</label>
+                            <input type="text" id="staff" name="staff" placeholder="例: 田中 太郎" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="area">作業場所</label>
+                            <select id="area" name="area">
+                                <option>厨房</option>
+                                <option>ホール</option>
+                                <option>レジ</option>
+                                <option>駐車場</option>
+                                <option>設備</option>
+                                <option>その他</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="type-field">
+                            <label for="type">出来事の種類</label>
+                            <select id="type" name="type">
+                                <option>事故</option>
+                                <option>故障</option>
+                                <option>クレーム</option>
+                                <option>賛辞</option>
+                                <option>売上</option>
+                                <option>その他</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="sales-fields">
+                            <label for="sales">売上（合計）</label>
+                            <input type="number" id="sales" name="sales" placeholder="例: 12345">
+                        </div>
+                        <div class="form-group" id="customers-field">
+                            <label for="customers">客数</label>
+                            <input type="number" id="customers" name="customers" placeholder="例: 78">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memo">メモ（出来事の詳細）</label>
+                        <textarea id="memo" name="memo" rows="6" placeholder="ここに詳細を記入してください..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo">写真（任意）</label>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="save-btn" class="submit-button">保存</button>
+                        <button type="button" id="suggest-btn" class="secondary-button">改善案を提案（AI）</button>
+                    </div>
+                </form>
+
+                <div id="suggestions" class="suggestions" aria-live="polite"></div>
+
+                <section class="list-section">
+                    <h3>保存された日報</h3>
+                    <div id="reports-list"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 日報システム</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/daily-report.js"></script>
+</body>
+</html>

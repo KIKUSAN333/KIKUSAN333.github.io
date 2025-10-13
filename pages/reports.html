@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日報一覧 - 管理者</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>日報システム（管理者）</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">ホームへ戻る</a></li>
+                <li id="user-area" style="display:none;"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="report-section">
+            <div class="container">
+                <h2 class="section-title">保存された日報（管理者ビュー）</h2>
+                    <div style="margin-bottom:12px; display:flex; gap:8px; align-items:center;">
+                        <a href="analytics.html" class="secondary-button">分析画面へ</a>
+                        <a href="score-config.html" class="secondary-button">スコア設定（管理者）</a>
+                    </div>
+                <div id="reports-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 日報システム</p>
+        </div>
+    </footer>
+
+    <script>
+        // ログインチェック
+        (function(){
+            try {
+                const user = JSON.parse(sessionStorage.getItem('dailyUser'));
+                if (!user || !user.id) {
+                    window.location.href = 'login.html';
+                }
+                const ua = document.getElementById('user-area');
+                ua.style.display = '';
+                ua.innerHTML = `<span style="color:white; margin-right:8px;">${user.id}でログイン中</span> <button id=\"logout-btn\" class=\"secondary-button\">ログアウト</button>`;
+                document.getElementById('logout-btn').addEventListener('click', ()=>{
+                    sessionStorage.removeItem('dailyUser');
+                    window.location.href = 'login.html';
+                });
+                // 管理者専用ボタンの表示制御
+                try {
+                    const adminBtn = document.querySelector('a[href="score-config.html"]');
+                    if (adminBtn) {
+                        if (String(user.id).toLowerCase() !== 'admin') adminBtn.style.display = 'none';
+                    }
+                } catch(e){}
+            } catch(e) {
+                console.error(e);
+                window.location.href = 'login.html';
+            }
+        })();
+
+        function loadReports() {
+            if (window.DailyCommon && typeof window.DailyCommon.loadReports === 'function') return window.DailyCommon.loadReports();
+            try { return JSON.parse(localStorage.getItem('dailyReports') || '[]'); } catch(e){ return []; }
+        }
+        function saveReports(r) { localStorage.setItem('dailyReports', JSON.stringify(r)); }
+
+        function renderReports() {
+            const reports = loadReports();
+            const container = document.getElementById('reports-list');
+            if (!reports || reports.length === 0) {
+                container.innerHTML = '<p>日報はまだありません。</p>';
+                return;
+            }
+            container.innerHTML = reports.map((r, i) => `
+                <div class="report-card">
+                    <div class="report-header"><strong>${escapeHtml(r.store)}</strong> - ${escapeHtml(r.staff)} (${r.date})</div>
+                    <div class="report-meta">${escapeHtml(r.area)} / ${escapeHtml(r.type)} / 売上: ${r.sales || '-'} / 客数: ${r.customers || '-'}</div>
+                    <div class="report-memo">${escapeHtml(r.memo)}</div>
+                    <div style="margin-top:8px;"><button class="delete-button" onclick="deleteReport(${i})">削除</button></div>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(t){ if (!t) return ''; return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+        function deleteReport(idx){
+            const reports = loadReports();
+            if (idx<0 || idx>=reports.length) return;
+            if (!confirm('この日報を削除しますか？')) return;
+            reports.splice(idx,1);
+            saveReports(reports);
+            renderReports();
+        }
+
+        renderReports();
+    </script>
+</body>
+</html>

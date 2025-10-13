@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>スコア設定 - 日報システム</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand"><h1>スコア設定</h1></div>
+            <ul class="nav-menu">
+                <li><a href="reports.html">管理画面へ戻る</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="report-section">
+            <div class="container">
+                <h2 class="section-title">管理者用：スコア設定（タグ・ルール）</h2>
+
+                <div class="card">
+                    <h3>売上設定</h3>
+                    <div class="form-group">
+                        <label for="sales-base">売上ベーススコア</label>
+                        <input id="sales-base" type="number" />
+                    </div>
+                    <div class="form-group">
+                        <label for="sales-per-1000">1,000ごとの加点</label>
+                        <input id="sales-per-1000" type="number" />
+                    </div>
+                    <div class="form-group">
+                        <label for="sales-max-add">売上加点上限</label>
+                        <input id="sales-max-add" type="number" />
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:12px;">
+                    <h3>イベント種別スコア（type の値ごと）</h3>
+                    <div id="type-rows"></div>
+                    <div style="margin-top:8px;"><button id="add-type" class="secondary-button">種別を追加</button></div>
+                </div>
+
+                <div class="card" style="margin-top:12px;">
+                    <h3>キーワード調整（メモに含まれる語に対する増減）</h3>
+                    <div id="kw-rows"></div>
+                    <div style="margin-top:8px;"><button id="add-kw" class="secondary-button">キーワードを追加</button></div>
+                </div>
+
+                <div style="margin-top:12px; display:flex; gap:8px;">
+                    <button id="save-config" class="submit-button">保存</button>
+                    <button id="reset-config" class="secondary-button">デフォルトに戻す</button>
+                </div>
+                <p class="muted" style="margin-top:8px;">※ 種別（タグ）を変更した場合、日報入力ページをリロードすると変更が反映されます。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="container">&copy; 2025 日報システム</div></footer>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/score-config.js"></script>
+</body>
+</html>
