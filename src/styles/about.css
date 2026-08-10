@@ -1,0 +1,55 @@
+/* ==============================
+   About
+============================== */
+
+.about {
+    padding-top: 20px;
+}
+
+
+/* ==============================
+   Header
+============================== */
+
+.about-header {
+    margin-bottom: 60px;
+}
+
+
+/* ==============================
+   Section
+============================== */
+
+.about-section {
+    margin-bottom: 60px;
+}
+
+.about-section h2 {
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   Skills
+============================== */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.skills li {
+    padding: 5px 12px;
+
+    font-size: 14px;
+    color: #555;
+
+    background-color: #eee;
+    border-radius: 4px;
+}

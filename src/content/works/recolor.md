@@ -7,7 +7,7 @@ technologies:
   - "C#"
 image: "/images/works/ReColoR.gif"
 ---
----
+
 ReColorは、失われた色を見つけ出すゲームです。
 
 左側の完成したイラストを参考にして、
