@@ -1,6 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/home.css";
+
+import { getCollection } from "astro:content";
+
+const works = await getCollection("works");
 ---
 
 <Layout title="Home">
@@ -17,39 +21,90 @@ import "../styles/home.css";
 
     <!-- Works -->
     <section>
+
         <div class="section-header">
             <h2>Featured Works</h2>
 
             <a href="/works/">View all works →</a>
         </div>
 
-        <div class="featured-works">
+        <div class="featured-works" id="featured-works">
 
-            <a href="/works/tetjong/" class="featured-work">
-                <img src="/images/works/Tetjong.gif" alt="Tetjong" />
+            {works.map((work) => (
+                <a href={`/works/${work.id}/`} class="featured-work">
+                    <img src={work.data.image} alt={work.data.title} />
 
-                <h3>Tetjong</h3>
+                    <h3>{work.data.title}</h3>
 
-                <p> テトリスと麻雀を組み合わせたゲーム</p>
-            </a>
-
-            <a href="/works/flower-fortune-telling/" class="featured-work">
-                <img src="/images/works/FlowerFortuneTelling.gif" alt="FlowerFortuneTelling" />
-
-                <h3>花うらない</h3>
-
-                <p> 花占いをテーマにしたゲーム</p>
-            </a>
-
-            <a href="/works/tyding-up/" class="featured-work">
-                <img src="/images/works/TydingUp.gif" alt="TydingUp" />
-
-                <h3>Tyding Up</h3>
-
-                <p> おもちゃをゴールまで導く高難易度3Dアクションゲーム</p>
-            </a>
+                    <p>{work.data.description}</p>
+                </a>
+            ))}
 
         </div>
+
+        <div class="featured-controls">
+            <button id="prev-works">← 前へ</button>
+            <button id="next-works">次へ →</button>
+        </div>
+
     </section>
 
 </Layout>
+
+
+<script>
+    const cards = Array.from(
+        document.querySelectorAll(".featured-work")
+    );
+
+    const nextButton = document.querySelector("#next-works");
+    const prevButton = document.querySelector("#prev-works");
+
+    const displayCount = 3;
+    const intervalTime = 5000;
+
+    let currentIndex = 0;
+
+    // 作品の表示を更新する関数
+    function showWorks() {
+
+        cards.forEach((card, index) => {
+
+            const relativeIndex = (index - currentIndex + cards.length) % cards.length;
+
+            if (relativeIndex < displayCount) {
+                card.classList.add("is-visible");
+            } else {
+                card.classList.remove("is-visible");
+            }
+
+        });
+
+    }
+
+    // ボタンのクリックイベントを設定
+    function nextWorks() {
+
+        currentIndex = (currentIndex + displayCount) % cards.length;
+
+        showWorks();
+
+    }
+
+    nextButton?.addEventListener("click", nextWorks);
+
+    function prevWorks() {
+
+        currentIndex = (currentIndex - displayCount + cards.length) % cards.length;
+
+        showWorks();
+
+    }
+
+    prevButton?.addEventListener("click", prevWorks);
+
+    // 作品表示
+    showWorks();
+
+    setInterval(() => {nextWorks();}, intervalTime);
+</script>

@@ -1,0 +1,52 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/work-detail.css";
+
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+    const works = await getCollection("works");
+
+    return works.map((work) => ({
+        params: { slug: work.id },
+        props: { work },
+    }));
+}
+
+const { work } = Astro.props;
+const { Content } = await render(work);
+---
+<Layout title={work.data.title}>
+
+    <article class="work-detail">
+
+        <div class="work-image">
+            <img src={work.data.image} alt={work.data.title} />
+        </div>
+
+        <header class="work-header">
+
+            <h1>{work.data.title}</h1>
+            
+
+            <p class="work-description">{work.data.description}</p>
+
+            <div class="work-technologies">
+                <ul>
+                    {work.data.technologies.map((technology) => (
+                        <li>{technology}</li>
+                    ))}
+                </ul>
+            </div>
+
+            <p class="work-year">{work.data.year}</p>
+
+        </header>
+
+        <div class="work-content">
+            <Content />
+        </div>
+
+    </article>
+
+</Layout>

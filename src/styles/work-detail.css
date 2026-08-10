@@ -1,0 +1,121 @@
+/* ==============================
+   作品詳細
+============================== */
+
+.work-detail {
+    padding-top: 20px;
+}
+
+
+/* ==============================
+   作品ヘッダー
+============================== */
+
+.work-header {
+    margin-bottom: 40px;
+}
+
+.work-header h1 {
+    margin-bottom: 15px;
+}
+
+.work-description {
+    color: #666;
+}
+
+.work-year {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #888;
+}
+
+
+/* ==============================
+   作品画像
+============================== */
+
+.work-image {
+    margin-bottom: 50px;
+}
+
+.work-image img {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* ==============================
+   使用技術
+============================== */
+
+.work-technologies {
+    margin-top: 25px;
+}
+
+.work-label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.work-technologies ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.work-technologies li {
+    padding: 5px 12px;
+
+    font-size: 14px;
+    color: #555;
+
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+
+/* ==============================
+   作品本文
+============================== */
+
+.work-content {
+    max-width: 800px;
+}
+
+.work-content h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.work-content h3 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.work-content p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.work-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 30px 0;
+}
+
+.work-content a {
+    color: #555;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.work-content a:hover {
+    color: #000;
+}

@@ -1,8 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/works.css";
----
 
+import { getCollection } from "astro:content";
+const works = await getCollection("works");
+---
 <Layout title="Works">
 
     <div class="works-content">
@@ -11,29 +13,16 @@ import "../../styles/works.css";
 
     <div class="works-grid">
 
-        <a href="/works/tyding-up/" class="work-card">
-            <img src="/images/works/TydingUp.gif" alt="TydingUp"/>
-        </a>
-
-        <a href="/works/flower-fortune-telling/" class="work-card">
-            <img src="/images/works/FlowerFortuneTelling.gif" alt="FlowerFortuneTelling"/>
-        </a>
-
-        <a href="/works/tetjong/" class="work-card">
-            <img src="/images/works/Tetjong.gif" alt="Tetjong"/>
-        </a>
-
-        <a href="/works/cicada-final/" class="work-card">
-            <img src="/images/works/CicadaFinal.gif" alt="CicadaFinal"/>
-        </a>
-
-        <a href="/works/recolor/" class="work-card">
-            <img src="/images/works/ReColoR.gif" alt="Recolor"/>
-        </a>
-
-        <a href="/works/tredecim/" class="work-card">
-            <img src="/images/works/Tredecim.gif" alt="Tredecim"/>
-        </a>
+        {
+            works.map((work) => (
+                <a href={`/works/${work.id}/`} class="work-card">
+                    <img
+                        src={work.data.image}
+                        alt={work.data.title}
+                    />
+                </a>
+            ))
+        }
 
     </div>
 
