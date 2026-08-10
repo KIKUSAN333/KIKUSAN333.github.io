@@ -1,13 +1,55 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/home.css";
 ---
 
-<Layout title="Main">
+<Layout title="Home">
 
-    <h1>KIKU</h1>
+    <!-- Hero -->
+    <section class="hero">
+        <p class="hero-name">KIKU</p>
 
-    <p>
-        Hi, there.
-    </p>
+        <h1>Game Developer</h1>
+
+        <p class="hero-description">ゲーム制作やHCIについて研究しています。</p>
+    </section>
+
+
+    <!-- Works -->
+    <section>
+        <div class="section-header">
+            <h2>Featured Works</h2>
+
+            <a href="/works/">View all works →</a>
+        </div>
+
+        <div class="featured-works">
+
+            <a href="/works/tetjong/" class="featured-work">
+                <img src="/images/works/Tetjong.gif" alt="Tetjong" />
+
+                <h3>Tetjong</h3>
+
+                <p> テトリスと麻雀を組み合わせたゲーム</p>
+            </a>
+
+            <a href="/works/flower-fortune-telling/" class="featured-work">
+                <img src="/images/works/FlowerFortuneTelling.gif" alt="FlowerFortuneTelling" />
+
+                <h3>花うらない</h3>
+
+                <p> 花占いをテーマにしたゲーム</p>
+            </a>
+
+            <a href="/works/tyding-up/" class="featured-work">
+                <img src="/images/works/TydingUp.gif" alt="TydingUp" />
+
+                <h3>Tyding Up</h3>
+
+                <p> おもちゃをゴールまで導く高難易度3Dアクションゲーム</p>
+            </a>
+
+        </div>
+    </section>
 
 </Layout>

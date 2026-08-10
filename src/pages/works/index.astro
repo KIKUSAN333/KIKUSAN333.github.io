@@ -1,13 +1,40 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import "../../styles/works.css";
 ---
 
 <Layout title="Works">
 
-    <h1>Works</h1>
+    <div class="works-content">
+        <h1>Works</h1>
+    </div>
 
-    <p>
-        My works.
-    </p>
+    <div class="works-grid">
+
+        <a href="/works/tyding-up/" class="work-card">
+            <img src="/images/works/TydingUp.gif" alt="TydingUp"/>
+        </a>
+
+        <a href="/works/flower-fortune-telling/" class="work-card">
+            <img src="/images/works/FlowerFortuneTelling.gif" alt="FlowerFortuneTelling"/>
+        </a>
+
+        <a href="/works/tetjong/" class="work-card">
+            <img src="/images/works/Tetjong.gif" alt="Tetjong"/>
+        </a>
+
+        <a href="/works/cicada-final/" class="work-card">
+            <img src="/images/works/CicadaFinal.gif" alt="CicadaFinal"/>
+        </a>
+
+        <a href="/works/recolor/" class="work-card">
+            <img src="/images/works/ReColoR.gif" alt="Recolor"/>
+        </a>
+
+        <a href="/works/tredecim/" class="work-card">
+            <img src="/images/works/Tredecim.gif" alt="Tredecim"/>
+        </a>
+
+    </div>
 
 </Layout>

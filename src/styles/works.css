@@ -1,0 +1,36 @@
+/* ==============================
+   Works
+============================== */
+
+.works-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.work-card {
+    display: block;
+}
+
+.work-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.work-card p {
+    margin: 0;
+    color: #666;
+}
+
+.work-card:hover img {
+    opacity: 0.8;
+}

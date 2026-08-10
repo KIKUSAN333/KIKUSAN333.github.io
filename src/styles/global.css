@@ -40,6 +40,7 @@ main {
     margin: 0 auto;
     padding: 0 20px;
     padding-top: 70px;
+    padding-bottom: 70px;
 }
 
 /* ==============================
@@ -120,4 +121,50 @@ p {
 
 .navbar-menu a:hover {
     color: #000;
+}
+
+/* ==============================
+   Footer
+============================== */
+
+.footer {
+    margin-top: 100px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-logo {
+    font-weight: 600;
+}
+
+.footer-menu,
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-menu a,
+.footer-links a {
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-menu a:hover,
+.footer-links a:hover {
+    color: #000;
+}
+
+.footer-copyright {
+    margin: 0 0 0 auto;
+    font-size: 13px;
+    color: #888;
 }

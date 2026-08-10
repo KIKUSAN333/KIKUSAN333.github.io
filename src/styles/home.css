@@ -1,0 +1,133 @@
+/* ==============================
+   Hero
+============================== */
+
+.hero {
+    padding: 80px 0 120px;
+}
+
+.hero-name {
+    margin-bottom: 16px;
+
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.hero h1 {
+    margin-bottom: 24px;
+
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    font-size: 18px;
+    line-height: 1.8;
+    color: #666;
+}
+
+
+/* ==============================
+   Section
+============================== */
+
+.home-section {
+    padding: 80px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    margin-bottom: 32px;
+}
+
+.section-header h2 {
+    margin: 0;
+}
+
+.section-header a {
+    font-size: 14px;
+    color: #666;
+}
+
+.section-header a:hover {
+    color: #000;
+}
+
+
+/* ==============================
+   Featured Works
+============================== */
+
+.featured-works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.featured-work {
+    display: block;
+}
+
+.featured-work img {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    transition: opacity 0.2s;
+}
+
+.featured-work:hover img {
+    opacity: 0.8;
+}
+
+.featured-work h3 {
+    margin: 12px 0 4px;
+}
+
+.featured-work p {
+    margin: 0;
+
+    font-size: 14px;
+    color: #666;
+}
+
+/* ==============================
+   Responsive
+============================== */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 50px 0 80px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .featured-works {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-header a {
+        display: inline-block;
+        margin-top: 8px;
+    }
+
+}
