@@ -1,68 +1,267 @@
-/* ==============================
-   About
-============================== */
+/* ========================================
+   About Hero
+======================================== */
 
-.about {
-    padding-top: 20px;
+.about-hero {
+    min-height: 520px;
+
+    padding: 80px 5vw 70px;
+
+    border-bottom: 1px solid #292929;
+
+    position: relative;
 }
 
-/* ==============================
-About Layout
-============================== */
+
+.about-hero-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 10px;
+
+    color: #777;
+
+    letter-spacing: 0.15em;
+}
+
+
+.about-hero h1 {
+    margin: 130px 0 0;
+
+    font-size: clamp(80px, 15vw, 190px);
+
+    line-height: 0.78;
+
+    letter-spacing: -0.08em;
+
+    font-weight: 900;
+}
+
+
+.about-hero h1 span {
+    color: #777;
+}
+
+
+.about-hero-description {
+    position: absolute;
+
+    bottom: 45px;
+    left: 5vw;
+
+    margin: 0;
+
+    font-size: 10px;
+
+    color: #777;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* ========================================
+   About Layout
+======================================== */
 
 .about-layout {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 130px 5vw;
+
     display: grid;
 
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(280px, 0.7fr);
 
-    gap: 100px;
+    gap: 120px;
 
     align-items: start;
 }
 
 
-/* ==============================
-Left
-============================== */
-
 .about-main {
     min-width: 0;
 }
 
+
+/* ========================================
+   Section
+======================================== */
+
 .about-section {
+    margin-bottom: 140px;
+}
+
+
+.section-label {
+    display: flex;
+
+    gap: 20px;
+
+    margin-bottom: 45px;
+
+    font-size: 9px;
+
+    color: #666;
+
+    letter-spacing: 0.16em;
+}
+
+
+.section-label span:first-child {
+    color: #444;
+}
+
+
+/* ========================================
+   Profile
+======================================== */
+
+.profile {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 50px;
+
+    align-items: start;
+}
+
+
+.profile-icon {
+    width: 140px;
+    height: 140px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+}
+
+
+.profile-text p {
+    margin: 0 0 20px;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+/* ========================================
+   Section Title
+======================================== */
+
+.section-title {
+    margin: 0 0 45px;
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 0.82;
+
+    letter-spacing: -0.07em;
+
+    font-weight: 900;
+}
+
+
+.section-text {
+    max-width: 650px;
+}
+
+
+.section-text p {
+    margin: 0 0 20px;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+/* ========================================
+   Skills
+======================================== */
+
+.skills-group {
     margin-bottom: 70px;
 }
 
-.about-section h2 {
+
+.skills-group h3 {
+    margin: 0 0 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #777;
+
+    letter-spacing: 0.14em;
+}
+
+
+.skills-group img {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+
     margin-bottom: 20px;
 }
 
 
-/* ==============================
-Right / Timeline
-============================== */
+.skills-group p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   Timeline
+======================================== */
 
 .timeline-section {
-    position: static;
+    position: sticky;
 
-    top: 40px;
+    top: 100px;
+
+    align-self: start;
 }
 
-.timeline-section h2 {
-    margin-top: 0;
-    margin-bottom: 35px;
-}
-
-
-/* ==============================
-Timeline
-============================== */
 
 .timeline {
     position: relative;
 
     padding-left: 30px;
 }
+
 
 .timeline::before {
     content: "";
@@ -76,20 +275,22 @@ Timeline
 
     width: 1px;
 
-    background: #ddd;
+    background: #292929;
 }
+
 
 .timeline-item {
     position: relative;
 
     display: grid;
 
-    grid-template-columns: 55px 1fr;
+    grid-template-columns: 45px 1fr;
 
     gap: 20px;
 
-    margin-bottom: 45px;
+    margin-bottom: 55px;
 }
+
 
 .timeline-item::before {
     content: "";
@@ -97,133 +298,101 @@ Timeline
     position: absolute;
 
     left: -30px;
-    top: 7px;
+
+    top: 5px;
 
     width: 9px;
     height: 9px;
 
-    background: #333;
-
     border-radius: 50%;
+
+    background: #777;
 }
 
-.timeline-year {
-    font-size: 13px;
 
-    font-weight: 600;
-
-    color: #888;
-}
-
-.timeline-content h3 {
-    margin: 0 0 6px;
-
-    font-size: 16px;
-}
-
-.timeline-content p {
-    margin: 0;
-
-    font-size: 14px;
+.timeline-item time {
+    font-size: 10px;
 
     color: #666;
 
-    line-height: 1.7;
+    letter-spacing: 0.08em;
 }
 
 
-/* ==============================
-Mobile
-============================== */
+.timeline-item h3 {
+    margin: 0 0 8px;
+
+    font-size: 16px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+}
+
+
+.timeline-item p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
 
 @media (max-width: 800px) {
+
+    .about-hero {
+        min-height: 450px;
+
+        padding-top: 50px;
+    }
+
+
+    .about-hero h1 {
+        margin-top: 120px;
+    }
+
 
     .about-layout {
         grid-template-columns: 1fr;
 
-        gap: 70px;
+        gap: 80px;
+
+        padding-top: 90px;
     }
+
 
     .timeline-section {
         position: static;
     }
 
-}
+
+    .profile {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
 
 
-/* ==============================
-   Section
-============================== */
-
-.about-section {
-    margin-bottom: 60px;
-}
-
-.about-section h2 {
-    margin-bottom: 20px;
-}
+    .profile-icon {
+        width: 100px;
+        height: 100px;
+    }
 
 
-/* ==============================
-Profile
-============================== */
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.profile-icon {
-    width: 120px;
-    height: 120px;
-}
-
-.profile-icon img {
-    width: 120px;
-    height: 120px;
-
-    display: block;
-
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.profile-text p:first-child {
-    margin-top: 0;
-}
+    .profile-text h2 {
+        margin-bottom: 35px;
+    }
 
 
-/* ==============================
-Skills
-============================== */
+    .about-section {
+        margin-bottom: 100px;
+    }
 
-.skills-group {
-    margin-bottom: 35px;
-}
-
-.skills-group h3 {
-    margin: 0 0 15px;
-
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.skills-group a {
-    display: inline-block;
-}
-
-.skills-group img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-.skills-text {
-    margin: 15px 0 0;
-
-    font-size: 13px;
-    color: #666;
-    line-height: 1.8;
 }

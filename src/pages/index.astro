@@ -7,44 +7,232 @@ import { getCollection } from "astro:content";
 const works = await getCollection("works");
 ---
 
-<Layout title="Home">
+<Layout title="KIKU — Portfolio">
 
     <!-- Hero -->
+
     <section class="hero">
-        <p class="hero-name">KIKU</p>
 
-        <h1>Game Developer</h1>
+        <div class="hero-top">
+            <span>GAME DEVELOPER</span>
+            <span>HCI RESEARCHER</span>
+        </div>
 
-        <p class="hero-description">ゲーム制作やHCIについて研究している一般人です。</p>
+        <div class="hero-main">
+
+            <h1>
+                CREATE
+                <br />
+                <span>INTERACTION</span>
+                <br />
+                THAT FEELS.
+            </h1>
+
+        </div>
+
+        <div class="hero-bottom">
+            <span>PORTFOLIO / 2026</span>
+            <span>SCROLL TO EXPLORE ↓</span>
+        </div>
+
+        <div class="hero-image">
+            <img src="../images/icons/icon.jpg"alt="KIKU portfolio hero image"/>
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about" class="about">
+
+        <div class="section-label">
+            <span>01</span>
+            <span>ABOUT</span>
+        </div>
+
+        <div class="about-content">
+
+            <h2>
+                Play,
+                <br />
+                interaction,
+                <br />
+                exploration.
+            </h2>
+
+            <div class="about-text">
+
+                <p>
+                    ゲーム制作やHCIについて研究している
+                    コンピュータ理工学科の学生です。
+                </p>
+
+                <p>
+                    「人とコンピュータの間にある体験」に興味があり、
+                    ゲームやインタラクションを通して、
+                    使っていて楽しいデジタル体験を考えています。
+                </p>
+
+                <a href="/about/" class="text-link">MORE ABOUT ME →</a>
+
+            </div>
+
+        </div>
+
     </section>
 
 
     <!-- Works -->
-    <section>
 
-        <div class="section-header">
-            <h2>Featured Works</h2>
+    <section id="works" class="works">
 
-            <a href="/works/">View all works →</a>
+        <div class="section-label">
+            <span>02</span>
+            <span>SELECTED WORKS</span>
         </div>
 
-        <div class="featured-works" id="featured-works">
+        <div class="works-content">
 
-            {works.map((work) => (
-                <a href={`/works/${work.id}/`} class="featured-work">
-                    <img src={work.data.image} alt={work.data.title} />
+            <div class="works-heading">
 
-                    <h3>{work.data.title}</h3>
+                <h2>
+                    Selected
+                    <br />
+                    Works.
+                </h2>
 
-                    <p>{work.data.description}</p>
-                </a>
-            ))}
+                <a href="/works/" class="text-link">VIEW ALL WORKS →</a>
+
+            </div>
+
+
+            <div>
+
+                <div class="featured-works" id="featured-works">
+
+                    {
+                        works.map((work, index) => (
+
+                            <a
+                                href={`/works/${work.id}/`}
+                                class:list={[
+                                    "featured-work",
+                                    index < 3 && "is-visible"
+                                ]}
+                            >
+
+                                <div class="work-image">
+
+                                    <img src={work.data.image} alt={work.data.title}/>
+
+                                    <span class="work-number">
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
+
+                                    <span class="work-arrow">
+                                        ↗
+                                    </span>
+
+                                </div>
+
+                                <div class="work-info">
+
+                                    <div>
+
+                                        <h3>{work.data.title}</h3>
+
+                                        <p>{work.data.description}</p>
+
+                                    </div>
+
+                                    <div class="work-meta">
+
+                                        <span>{work.data.year}</span>
+
+                                        <span>{work.data.technologies.join(" / ")}</span>
+
+                                    </div>
+
+                                </div>
+
+                            </a>
+
+                        ))
+                    }
+
+                </div>
+
+
+                <div class="featured-controls">
+
+                    <button id="prev-works" aria-label="Previous works">←</button>
+
+                    <div class="work-progress">
+
+                        <span id="current-work">
+                            01
+                        </span>
+
+                        <span>/</span>
+
+                        <span>
+                            {String(works.length).padStart(2, "0")}
+                        </span>
+
+                    </div>
+
+                    <button id="next-works" aria-label="Next works">→</button>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="featured-controls">
-            <button id="prev-works">← 前へ</button>
-            <button id="next-works">次へ →</button>
+    </section>
+
+
+    <!-- Statement -->
+
+    <section class="statement">
+
+        <p>
+            CREATE.
+            <br />
+            PLAY.
+            <br />
+            <em>RESEARCH</em>
+        </p>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-label">
+
+            <span>03</span>
+            <span>CONTACT</span>
+
+        </div>
+
+        <div class="contact-content">
+
+            <p class="contact-label">HAVE A PROJECT?</p>
+
+            <h2>
+                LET'S
+                <br />
+                TALK.
+            </h2>
+
+            <a href="https://X.com/kikukikukiku333" target="_blank" rel="noopener noreferrer" class="contact-link">
+                X ↗
+            </a>
+
         </div>
 
     </section>
@@ -53,58 +241,113 @@ const works = await getCollection("works");
 
 
 <script>
+
     const cards = Array.from(
         document.querySelectorAll(".featured-work")
     );
 
-    const nextButton = document.querySelector("#next-works");
-    const prevButton = document.querySelector("#prev-works");
+    const nextButton =
+        document.querySelector("#next-works");
+
+    const prevButton =
+        document.querySelector("#prev-works");
+
+    const currentWork =
+        document.querySelector("#current-work");
 
     const displayCount = 3;
+
     const intervalTime = 5000;
 
     let currentIndex = 0;
 
-    // 作品の表示を更新する関数
+
     function showWorks() {
+
+        if (cards.length === 0) {
+            return;
+        }
 
         cards.forEach((card, index) => {
 
-            const relativeIndex = (index - currentIndex + cards.length) % cards.length;
+            const relativeIndex =
+                (index - currentIndex + cards.length)
+                % cards.length;
 
             if (relativeIndex < displayCount) {
+
                 card.classList.add("is-visible");
+
             } else {
+
                 card.classList.remove("is-visible");
+
             }
 
         });
 
+
+        if (currentWork) {
+
+            currentWork.textContent =
+                String(currentIndex + 1).padStart(2, "0");
+
+        }
+
     }
 
-    // ボタンのクリックイベントを設定
+
     function nextWorks() {
 
-        currentIndex = (currentIndex + displayCount) % cards.length;
+        if (cards.length <= displayCount) {
+            return;
+        }
+
+        currentIndex =
+            (currentIndex + displayCount)
+            % cards.length;
 
         showWorks();
 
     }
 
-    nextButton?.addEventListener("click", nextWorks);
 
     function prevWorks() {
 
-        currentIndex = (currentIndex - displayCount + cards.length) % cards.length;
+        if (cards.length <= displayCount) {
+            return;
+        }
+
+        currentIndex =
+            (currentIndex - displayCount + cards.length)
+            % cards.length;
 
         showWorks();
 
     }
 
-    prevButton?.addEventListener("click", prevWorks);
 
-    // 作品表示
+    nextButton?.addEventListener(
+        "click",
+        nextWorks
+    );
+
+    prevButton?.addEventListener(
+        "click",
+        prevWorks
+    );
+
+
     showWorks();
 
-    setInterval(() => {nextWorks();}, intervalTime);
+
+    if (cards.length > displayCount) {
+
+        setInterval(
+            nextWorks,
+            intervalTime
+        );
+
+    }
+
 </script>

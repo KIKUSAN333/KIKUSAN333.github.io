@@ -1,121 +1,432 @@
-/* ==============================
-   作品詳細
-============================== */
+/* ========================================
+   Work Detail
+======================================== */
 
 .work-detail {
-    padding-top: 20px;
+    padding-bottom: 150px;
 }
 
 
-/* ==============================
-   作品ヘッダー
-============================== */
+/* ========================================
+   Header
+======================================== */
 
 .work-header {
-    margin-bottom: 40px;
+    min-height: 720px;
+
+    padding: 80px 5vw 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+
+    border-bottom: 1px solid #292929;
 }
 
+
+.work-header-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 10px;
+
+    letter-spacing: 0.16em;
+
+    color: #777;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.work-header-top a {
+    color: #777;
+
+    transition:
+        color 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+
+.work-header-top a:hover {
+    color: #fff;
+
+    padding-left: 8px;
+}
+
+
+
+/* ========================================
+   Title
+======================================== */
+
 .work-header h1 {
-    margin-bottom: 15px;
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    font-size: clamp(70px, 14vw, 190px);
+
+    line-height: 0.78;
+
+    letter-spacing: -0.08em;
+
+    font-weight: 900;
+
+    overflow-wrap: anywhere;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   Header Bottom
+======================================== */
+
+.work-header-bottom {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(220px, 0.6fr);
+
+    gap: 80px;
+
+    align-items: end;
 }
 
 .work-description {
-    color: #666;
-}
+    max-width: 550px;
 
-.work-year {
-    margin-top: 15px;
-    font-size: 14px;
+    margin: 0;
+
     color: #888;
+
+    font-size: 14px;
+
+    line-height: 2;
 }
 
 
-/* ==============================
-   作品画像
-============================== */
+
+/* ========================================
+   Meta
+======================================== */
+
+
+.work-meta {
+    justify-self: end;
+
+    width: 100%;
+    max-width: 300px;
+
+    text-align: right;
+}
+
+.work-meta > span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 9px;
+
+    color: #666;
+
+    letter-spacing: 0.16em;
+}
+
+.work-meta ul {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.work-meta li {
+    padding: 7px 10px;
+
+    border: 1px solid #292929;
+
+    color: #888;
+
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* ========================================
+   Main Image
+======================================== */
 
 .work-image {
-    margin-bottom: 50px;
+    margin: 80px auto 140px;
+
+    max-width: 1200px;
 }
+
 
 .work-image img {
     display: block;
-    width: 50%;
+
+    width: 100%;
+
     height: auto;
+
+    max-height: 700px;
+
+    object-fit: contain;
+}
+
+
+/* ========================================
+   Content
+======================================== */
+
+.work-content {
+    max-width: 800px;
+
     margin: 0 auto;
 }
 
 
-/* ==============================
-   使用技術
-============================== */
-
-.work-technologies {
-    margin-top: 25px;
-}
-
-.work-label {
-    margin-bottom: 10px;
-    font-size: 14px;
-    color: #888;
-}
-
-.work-technologies ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.work-technologies li {
-    padding: 5px 12px;
-
-    font-size: 14px;
-    color: #555;
-
-    background-color: #eee;
-    border-radius: 4px;
-}
-
-
-/* ==============================
-   作品本文
-============================== */
-
-.work-content {
-    max-width: 800px;
-}
-
 .work-content h2 {
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin: 100px 0 30px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #292929;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 800;
 }
+
 
 .work-content h3 {
-    margin-top: 35px;
-    margin-bottom: 15px;
+    margin: 60px 0 20px;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.03em;
 }
 
+
 .work-content p {
-    margin-bottom: 8px;
-    line-height: 1.6;
+    margin: 0 0 20px;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 2;
 }
+
+
+.work-content ul,
+.work-content ol {
+    margin: 25px 0;
+
+    padding-left: 20px;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+.work-content li {
+    margin-bottom: 5px;
+}
+
+
+/* ========================================
+   Content Images
+======================================== */
 
 .work-content img {
     display: block;
-    max-width: 100%;
+
+    width: 100%;
+
     height: auto;
-    margin: 30px 0;
+
+    margin: 50px 0;
 }
+
+
+/* ========================================
+   Links
+======================================== */
 
 .work-content a {
-    color: #555;
+    color: #aaa;
+
     text-decoration: underline;
-    text-underline-offset: 3px;
+
+    text-underline-offset: 4px;
+
+    transition: color 0.25s ease;
 }
 
+
 .work-content a:hover {
-    color: #000;
+    color: #fff;
+}
+
+
+/* ========================================
+   Code
+======================================== */
+
+.work-content code {
+    padding: 3px 6px;
+
+    background: #111;
+
+    color: #aaa;
+
+    font-size: 0.9em;
+}
+
+
+.work-content pre {
+    overflow-x: auto;
+
+    margin: 35px 0;
+
+    padding: 25px;
+
+    background: #111;
+
+    border: 1px solid #292929;
+}
+
+
+.work-content pre code {
+    padding: 0;
+
+    background: transparent;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   Work Footer
+======================================== */
+
+.work-footer {
+    max-width: 800px;
+
+    margin: 150px auto 0;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #292929;
+}
+
+
+.back-link {
+    font-size: 10px;
+
+    color: #777;
+
+    letter-spacing: 0.15em;
+
+    transition: color 0.25s ease;
+}
+
+
+.back-link:hover {
+    color: #fff;
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 800px) {
+
+    .work-header {
+        padding-top: 50px;
+
+        padding-bottom: 70px;
+    }
+
+
+    .work-header-top {
+        margin-bottom: 80px;
+    }
+
+
+    .work-header h1 {
+        font-size: clamp(60px, 18vw, 120px);
+    }
+
+
+    .work-header-bottom {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        margin-top: 60px;
+    }
+
+
+    .work-meta {
+        justify-self: start;
+    }
+
+
+    .work-image {
+        margin: 50px auto 90px;
+    }
+
+
+    .work-content h2 {
+        margin-top: 70px;
+    }
+
+
+    .work-content h3 {
+        margin-top: 45px;
+    }
+
+
+    .work-footer {
+        margin-top: 100px;
+    }
+
 }
