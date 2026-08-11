@@ -5,57 +5,149 @@ import "../../styles/about.css";
 
 <Layout title="About">
 
-    <article class="about">
-
-        <header class="about-header">
-            <h1>About</h1>
-        </header>
+    <header>
+        <h1>About</h1>
+    </header>
 
 
-        <section class="about-section">
+    <div class="about-layout">
 
-            <h2>Profile</h2>
+        <div class="about-main">
 
-            <p>KIKU（キク）といいます。</p>
+            <section class="about-section">
+                <h2>Profile</h2>
 
-            <p>ゲーム制作やHCIについて研究している一般人です。</p>
+                <div class="profile">
+                    <div class="profile-icon">
+                        <img src="/images/icons/icon.jpg" alt="KIKU-icon" />
+                    </div>
 
-        </section>
+                    <div class="profile-text">
+                        <p>KIKU（キク）といいます。</p>
 
+                        <p>
+                            山梨大学でコンピュータ理工学を学びながら、
+                            ゲーム制作やHCIについて研究しています。
+                        </p>
 
-        <section class="about-section">
-
-            <h2>Game Development</h2>
-
-            <p>
-                Unityを使用したゲーム制作を行っています。
-                ゲームのアイデアを考え、企画から実装まで取り組んでいます。
-            </p>
-
-        </section>
-
-
-        <section class="about-section">
-
-            <h2>Research</h2>
-
-            <p>HCIを中心に研究しています。</p>
-
-        </section>
+                        <p>
+                            ゲーム制作と研究の両方を通して、
+                            人とコンピュータの関わり方について考えています。
+                        </p>
+                    </div>
+                </div>
+            </section>
 
 
-        <section class="about-section">
+            <section class="about-section">
+                <h2>Game Development</h2>
 
-            <h2>Skills</h2>
+                <p>
+                    UnityとC#を中心にゲーム制作を行っています。
+                    アイデアの企画から実装まで、一通りの工程に取り組んでいます。
+                </p>
 
-            <ul class="skills">
-                <li>Unity</li>
-                <li>C#</li>
-                <li>Git / GitHub</li>
-            </ul>
+                <p>
+                    プログラミングだけでなく、3DモデリングやUIデザイン、レベルデザインなども幅広く行っています。
+                </p>
+            </section>
 
-        </section>
 
-    </article>
+            <section class="about-section">
+                <h2>Research</h2>
+
+                <p>
+                    HCIを中心に研究しています。
+                    特にVRや視線を利用したインタラクションに興味があります。
+                </p>
+            </section>
+
+
+            <section class="about-section">
+                <h2>Skills</h2>
+
+                <div class="skills-group">
+                    <h3>Experienced</h3>
+
+                    <img
+                        src="https://skillicons.dev/icons?i=blender,cpp,cs,git,github,latex,md,unity,ubuntu,visualstudio,vscode,windows"
+                        alt="Experienced skills"
+                    />
+
+                    <p class="skills-text">
+                        <strong>
+                            Blender · C++ · C# · Git · GitHub · LaTeX · Markdown · Unity ·
+                            Ubuntu · Visual Studio · VS Code · Windows
+                        </strong>
+                    </p>
+                </div>
+
+                <div class="skills-group">
+                    <h3>Familiar</h3>
+
+                    <img
+                        src="https://skillicons.dev/icons?i=arduino,astro,c,css,django,docker,eclipse,gitlab,html,java,js,py,r,unreal"
+                        alt="Familiar skills"
+                    />
+
+                    <p class="skills-text">
+                        <strong>
+                            Arduino · Astro · C · CSS · Django · Docker · Eclipse · GitLab ·
+                            HTML · Java · JavaScript · Python · R · Unreal Engine
+                        </strong>
+                    </p>
+                </div>
+            </section>
+
+
+        </div>
+
+        <aside class="timeline-section">
+
+            <h2>Timeline</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <time class="timeline-year">2023</time>
+
+                    <div class="timeline-content">
+                        <h3>University</h3>
+                        <p>山梨大学工学部コンピュータ理工学科に入学</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <time class="timeline-year">2024</time>
+
+                    <div class="timeline-content">
+                        <h3>G^2</h3>
+                        <p>一次創作サークルでゲームのチーム開発に取り組む</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <time class="timeline-year">2025</time>
+
+                    <div class="timeline-content">
+                        <h3>アルバイト</h3>
+                        <p>IT企業でシステム開発のアルバイトを経験</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <time class="timeline-year">2026</time>
+
+                    <div class="timeline-content">
+                        <h3>HCI Research</h3>
+                        <p>HCIについて研究</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
 
 </Layout>

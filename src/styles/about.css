@@ -6,13 +6,148 @@
     padding-top: 20px;
 }
 
-
 /* ==============================
-   Header
+About Layout
 ============================== */
 
-.about-header {
-    margin-bottom: 60px;
+.about-layout {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+/* ==============================
+Left
+============================== */
+
+.about-main {
+    min-width: 0;
+}
+
+.about-section {
+    margin-bottom: 70px;
+}
+
+.about-section h2 {
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+Right / Timeline
+============================== */
+
+.timeline-section {
+    position: static;
+
+    top: 40px;
+}
+
+.timeline-section h2 {
+    margin-top: 0;
+    margin-bottom: 35px;
+}
+
+
+/* ==============================
+Timeline
+============================== */
+
+.timeline {
+    position: relative;
+
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 5px;
+    bottom: 0;
+
+    left: 4px;
+
+    width: 1px;
+
+    background: #ddd;
+}
+
+.timeline-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 55px 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 45px;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -30px;
+    top: 7px;
+
+    width: 9px;
+    height: 9px;
+
+    background: #333;
+
+    border-radius: 50%;
+}
+
+.timeline-year {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #888;
+}
+
+.timeline-content h3 {
+    margin: 0 0 6px;
+
+    font-size: 16px;
+}
+
+.timeline-content p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* ==============================
+Mobile
+============================== */
+
+@media (max-width: 800px) {
+
+    .about-layout {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+    .timeline-section {
+        position: static;
+    }
+
 }
 
 
@@ -30,26 +165,65 @@
 
 
 /* ==============================
-   Skills
+Profile
 ============================== */
 
-.skills {
+.profile {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
 }
 
-.skills li {
-    padding: 5px 12px;
+.profile-icon {
+    width: 120px;
+    height: 120px;
+}
 
-    font-size: 14px;
-    color: #555;
+.profile-icon img {
+    width: 120px;
+    height: 120px;
 
-    background-color: #eee;
-    border-radius: 4px;
+    display: block;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-text p:first-child {
+    margin-top: 0;
+}
+
+
+/* ==============================
+Skills
+============================== */
+
+.skills-group {
+    margin-bottom: 35px;
+}
+
+.skills-group h3 {
+    margin: 0 0 15px;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.skills-group a {
+    display: inline-block;
+}
+
+.skills-group img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.skills-text {
+    margin: 15px 0 0;
+
+    font-size: 13px;
+    color: #666;
+    line-height: 1.8;
 }

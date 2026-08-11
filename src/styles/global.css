@@ -128,17 +128,26 @@ p {
 ============================== */
 
 .footer {
+    width: 100%;
+
     margin-top: 100px;
+
+    background-color: #f7f7f5;
+
     border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .footer-inner {
     max-width: 900px;
     margin: 0 auto;
-    padding: 40px 20px;
+
+    min-height: 70px;
+    padding: 0 30px;
 
     display: flex;
     align-items: center;
+
     gap: 30px;
 }
 
@@ -149,13 +158,13 @@ p {
 .footer-menu,
 .footer-links {
     display: flex;
-    gap: 20px;
+    gap: 24px;
 }
 
 .footer-menu a,
 .footer-links a {
     font-size: 14px;
-    color: #666;
+    color: #555;
 }
 
 .footer-menu a:hover,
@@ -165,6 +174,8 @@ p {
 
 .footer-copyright {
     margin: 0 0 0 auto;
+
     font-size: 13px;
     color: #888;
 }
+
