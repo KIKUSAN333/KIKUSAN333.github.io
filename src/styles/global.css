@@ -1,6 +1,22 @@
-/* ========================================
-   Global
-======================================== */
+:root {
+    /* Colors */
+    --color-bg: #090909;
+    --color-text-main: #f1f1ed;
+    --color-text-sub: #777777;
+    --color-border: #292929;
+
+    /* Typography */
+    --font-heading-weight: 900;
+    --font-heading-line-height: 0.78;
+    --font-heading-letter-spacing: -0.08em;
+
+    --letter-spacing-label: 0.16em;
+    --letter-spacing-nav: 0.15em;
+    --letter-spacing-meta: 0.08em;
+
+    /* Layout / Spacing */
+    --padding-container-x: 5vw;
+}
 
 * {
     box-sizing: border-box;
@@ -13,8 +29,8 @@ html {
 body {
     margin: 0;
 
-    background: #090909;
-    color: #f1f1ed;
+    background: var(--color-bg);
+    color: var(--color-text-main);
 
     font-family:
         -apple-system,
@@ -29,206 +45,4 @@ body {
 a {
     color: inherit;
     text-decoration: none;
-}
-
-
-/* ========================================
-   Navbar
-======================================== */
-
-.navbar {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 70px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 5vw;
-
-    background: #090909;
-
-    border-bottom: 1px solid #292929;
-
-    z-index: 1000;
-}
-
-
-.navbar-logo {
-    font-size: 13px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.15em;
-}
-
-
-.navbar-menu {
-    display: flex;
-
-    gap: 28px;
-}
-
-
-.navbar-menu a {
-    font-size: 10px;
-
-    color: #777;
-
-    letter-spacing: 0.14em;
-
-    transition: color 0.25s ease;
-}
-
-
-.navbar-menu a:hover {
-    color: #fff;
-}
-
-
-/* ========================================
-   Main
-======================================== */
-
-main {
-    width: 100%;
-
-    margin: 0;
-
-    padding: 0;
-}
-
-
-/* ========================================
-   Footer
-======================================== */
-
-.footer {
-    width: 100%;
-
-    margin: 0;
-
-    background: #090909;
-
-    border-top: 1px solid #292929;
-}
-
-
-.footer-inner {
-    min-height: 90px;
-
-    padding: 0 5vw;
-
-    display: flex;
-    align-items: center;
-
-    gap: 35px;
-}
-
-
-.footer-logo {
-    font-size: 11px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.15em;
-}
-
-
-.footer-menu {
-    display: flex;
-
-    gap: 25px;
-}
-
-
-.footer-menu a {
-    font-size: 9px;
-
-    color: #666;
-
-    letter-spacing: 0.12em;
-}
-
-
-.footer-menu a:hover {
-    color: #fff;
-}
-
-
-.footer-social {
-    display: flex;
-
-    gap: 25px;
-
-    margin-left: auto;
-}
-
-
-.footer-social a {
-    font-size: 10px;
-
-    color: #777;
-
-    letter-spacing: 0.14em;
-
-    transition: color 0.25s ease;
-}
-
-
-.footer-social a:hover {
-    color: #fff;
-}
-
-
-.footer-copyright {
-    margin-left: auto;
-
-    font-size: 9px;
-
-    color: #555;
-
-    letter-spacing: 0.1em;
-}
-
-
-/* ========================================
-   Mobile
-======================================== */
-
-@media (max-width: 600px) {
-
-    .navbar {
-        height: 60px;
-
-        padding: 0 25px;
-    }
-
-    .navbar-menu {
-        gap: 15px;
-    }
-
-    .navbar-menu a {
-        font-size: 9px;
-    }
-
-    .footer-inner {
-        padding: 25px;
-
-        flex-wrap: wrap;
-
-        gap: 20px;
-    }
-
-    .footer-copyright {
-        width: 100%;
-
-        margin-left: 0;
-    }
-
 }
