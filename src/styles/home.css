@@ -22,19 +22,12 @@
 
 
 .hero-top {
-    display: flex;
+    --caption-spacing: var(--letter-spacing-label);
 
-    justify-content: space-between;
 
     position: relative;
 
     z-index: 2;
-
-    font-size: 10px;
-
-    letter-spacing: var(--letter-spacing-label);
-
-    color: var(--color-text-sub);
 }
 
 
@@ -51,33 +44,13 @@
     margin: 0;
 
     font-size: clamp(65px, 13vw, 120px);
-
-    line-height: var(--font-heading-line-height);
-
-    font-weight: var(--font-heading-weight);
-
-    letter-spacing: var(--font-heading-letter-spacing);
 }
 
-
-.hero h1 .hero-title-line--muted {
-    color: var(--color-text-sub);
-}
 
 .hero-bottom {
-    display: flex;
-
-    justify-content: space-between;
-
     position: relative;
 
     z-index: 2;
-
-    font-size: 10px;
-
-    letter-spacing: var(--letter-spacing-nav);
-
-    color: var(--color-text-sub);
 }
 
 
@@ -101,15 +74,6 @@
     mix-blend-mode: screen;
 }
 
-.hero-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
 
 /* ========================================
    Common Section
@@ -118,7 +82,6 @@
 .about,
 .works,
 .contact {
-
     padding:
         130px
         var(--padding-container-x);
@@ -135,22 +98,6 @@
 }
 
 
-.section-label {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-
-    font-size: 10px;
-
-    letter-spacing: var(--letter-spacing-label);
-
-    color: var(--color-text-sub);
-}
-
-
 /* ========================================
    About
 ======================================== */
@@ -161,20 +108,15 @@
 
 
 .about-content h2 {
-
     margin: 0;
 
     font-size: clamp(48px, 7vw, 100px);
-
-    line-height: 0.9;
-
-    letter-spacing: -0.07em;
-
-    font-weight: 800;
 }
 
 
 .about-text {
+    --body-copy-gap: 25px;
+    --body-copy-size: 15px;
 
     max-width: 560px;
 
@@ -182,43 +124,8 @@
 }
 
 
-.about-text p {
-
-    margin: 0 0 25px;
-
-    font-size: 15px;
-
-    line-height: 2;
-
-    color: var(--color-text-sub)
-}
-
-
 .text-link {
-
-    display: inline-block;
-
     margin-top: 20px;
-
-    padding-bottom: 5px;
-
-    border-bottom: 1px solid var(--color-text-sub);
-
-    font-size: 10px;
-
-    letter-spacing: var(--letter-spacing-nav);
-
-    transition:
-        color 0.25s,
-        border-color 0.25s;
-}
-
-
-.text-link:hover {
-
-    color: #fff;
-
-    border-color: #fff;
 }
 
 
@@ -232,7 +139,6 @@
 
 
 .works-heading {
-
     display: flex;
 
     justify-content: space-between;
@@ -244,7 +150,7 @@
 
 
 .works-heading h2 {
-
+    --section-heading-line-height: 0.85;
     margin: 0;
 
     font-size:
@@ -253,12 +159,6 @@
             8vw,
             110px
         );
-
-    line-height: 0.85;
-
-    letter-spacing: -0.07em;
-
-    font-weight: 800;
 }
 
 
@@ -267,7 +167,6 @@
 ======================================== */
 
 .featured-works {
-
     display: grid;
 
     grid-template-columns:
@@ -278,28 +177,10 @@
 
 
 .featured-work {
-
-    display: none;
-
-    min-width: 0;
-
-    opacity: 0;
-
-    transform: translateY(15px);
-
-    transition:
-        opacity 0.4s ease,
-        transform 0.4s ease;
-}
-
-
-.featured-work.is-visible {
-
     display: block;
 
-    opacity: 1;
 
-    transform: translateY(0);
+    min-width: 0;
 }
 
 
@@ -308,7 +189,6 @@
 ======================================== */
 
 .work-image {
-
     position: relative;
 
     aspect-ratio: 4 / 3;
@@ -320,14 +200,6 @@
 
 
 .work-image img {
-
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
     filter: grayscale(100%);
 
     transition:
@@ -338,28 +210,13 @@
 
 .featured-work:hover
 .work-image img {
-
     transform: scale(1.05);
 
     filter: grayscale(0%);
 }
 
 
-.work-number {
-
-    position: absolute;
-
-    top: 15px;
-    left: 15px;
-
-    font-size: 10px;
-
-    color: #fff;
-}
-
-
 .work-arrow {
-
     position: absolute;
 
     right: 15px;
@@ -373,7 +230,6 @@
 
 .featured-work:hover
 .work-arrow {
-
     transform: translate(4px, -4px);
     
 }
@@ -384,7 +240,6 @@
 ======================================== */
 
 .work-info {
-
     padding-top: 20px;
 
     display: flex;
@@ -396,7 +251,6 @@
 
 
 .work-info h3 {
-
     margin: 0;
 
     font-size: 22px;
@@ -408,7 +262,6 @@
 
 
 .work-info p {
-
     margin: 8px 0 0;
 
     font-size: 12px;
@@ -420,7 +273,6 @@
 
 
 .work-meta {
-
     flex-shrink: 0;
 
     display: flex;
@@ -442,116 +294,10 @@
 
 
 /* ========================================
-   Controls
-======================================== */
-
-.featured-controls {
-
-    margin-top: 50px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 25px;
-}
-
-
-.featured-controls button {
-
-    width: 45px;
-    height: 45px;
-
-    border: 1px solid var(--color-border);
-
-    background: transparent;
-
-    color: #aaa;
-
-    cursor: pointer;
-}
-
-
-.featured-controls button:hover {
-
-    background: #fff;
-
-    color: #000;
-
-    border-color: #fff;
-}
-
-
-.work-progress {
-
-    display: flex;
-
-    gap: 8px;
-
-    font-size: 10px;
-
-    color: var(--color-text-sub);
-}
-
-
-#current-work {
-    color: #fff;
-}
-
-
-/* ========================================
-   Statement
-======================================== */
-
-.statement {
-
-    min-height: 650px;
-
-    padding: 80px var(--padding-container-x);
-
-    display: grid;
-
-    place-items: center;
-
-    border-bottom: 1px solid var(--color-border);
-}
-
-
-.statement p {
-
-    margin: 0;
-
-    text-align: center;
-
-    font-size:
-        clamp(
-            70px,
-            12vw,
-            170px
-        );
-
-    line-height: var(--font-heading-line-height);
-
-    letter-spacing: var(--font-heading-letter-spacing);
-
-    font-weight: var(--font-heading-weight);
-}
-
-
-.statement em {
-
-    font-style: normal;
-
-    color: var(--color-text-sub);
-}
-
-
-/* ========================================
    Contact
 ======================================== */
 
 .contact {
-
     min-height: 650px;
 }
 
@@ -561,20 +307,7 @@
 }
 
 
-.contact-label {
-
-    margin: 0 0 40px;
-
-    font-size: 10px;
-
-    letter-spacing: var(--letter-spacing-label);
-
-    color: var(--color-text-sub);
-}
-
-
 .contact h2 {
-
     margin: 0 0 70px;
 
     font-size:
@@ -583,12 +316,6 @@
             12vw,
             170px
         );
-
-    line-height: var(--font-heading-line-height);
-
-    letter-spacing: var(--font-heading-letter-spacing);
-
-    font-weight: var(--font-heading-weight);
 }
 
 
@@ -603,6 +330,7 @@
 }
 
 .contact-link {
+    --link-outline-offset: 6px;
     display: grid;
     grid-template-columns: 90px minmax(0, 1fr) auto;
     align-items: baseline;
@@ -633,19 +361,8 @@
 
 .contact-link:hover {
     border-bottom-color: var(--color-text-main);
-    color: #fff;
 }
 
-.contact-link:focus-visible {
-    outline: 2px solid var(--color-text-main);
-    outline-offset: 6px;
-}
-
-.contact-note {
-    margin: 20px 0 0;
-    font-size: 11px;
-    color: var(--color-text-sub);
-}
 
 @media (max-width: 480px) {
     .contact-link {
@@ -670,9 +387,7 @@
 ======================================== */
 
 @media (max-width: 800px) {
-
     .hero {
-
         min-height: 750px;
 
         padding:
@@ -683,25 +398,13 @@
 
 
     .hero-top {
-
         flex-direction: column;
 
         gap: 5px;
     }
 
 
-    .hero-circle {
-
-        width: 300px;
-        height: 300px;
-
-        right: -70px;
-        top: 280px;
-    }
-
-
     .hero-bottom {
-
         flex-direction: column;
 
         gap: 8px;
@@ -711,7 +414,6 @@
     .about,
     .works,
     .contact {
-
         padding:
             90px
             25px;
@@ -723,7 +425,6 @@
 
 
     .works-heading {
-
         display: block;
 
         margin-bottom: 50px;
@@ -731,25 +432,21 @@
 
 
     .works-heading .text-link {
-
         margin-top: 35px;
     }
 
 
     .featured-works {
-
         grid-template-columns: 1fr;
     }
 
 
     .work-info {
-
         display: block;
     }
 
 
     .work-meta {
-
         margin-top: 15px;
 
         align-items: flex-start;
@@ -758,15 +455,7 @@
     }
 
 
-    .statement {
-
-        min-height: 450px;
-    }
-
-
     footer {
-
         padding: 30px 25px;
     }
-
 }

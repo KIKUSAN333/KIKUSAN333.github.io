@@ -45,8 +45,6 @@
 
 
 .work-header-top a {
-    color: var(--color-text-sub);
-
     transition:
         color 0.25s ease,
         padding-left 0.25s ease;
@@ -54,11 +52,8 @@
 
 
 .work-header-top a:hover {
-    color: #fff;
-
     padding-left: 8px;
 }
-
 
 
 /* ========================================
@@ -74,11 +69,6 @@
 
     font-size: clamp(70px, 14vw, 190px);
 
-    line-height: var(--font-heading-line-height);
-
-    letter-spacing: var(--font-heading-letter-spacing);
-
-    font-weight: var(--font-heading-weight);
 
     overflow-wrap: anywhere;
 
@@ -107,17 +97,9 @@
 }
 
 .work-description {
+    --body-copy-gap: 0px;
     max-width: 550px;
-
-    margin: 0;
-
-    color: var(--color-text-sub);
-
-    font-size: 14px;
-
-    line-height: 2;
 }
-
 
 
 /* ========================================
@@ -204,6 +186,7 @@
 ======================================== */
 
 .work-content {
+    --section-heading-spacing: -0.06em;
     max-width: 800px;
 
     margin: 0 auto;
@@ -218,12 +201,6 @@
     border-top: 1px solid var(--color-border);
 
     font-size: clamp(35px, 5vw, 60px);
-
-    line-height: 0.9;
-
-    letter-spacing: -0.06em;
-
-    font-weight: 800;
 }
 
 
@@ -235,17 +212,6 @@
     line-height: 1.2;
 
     letter-spacing: -0.03em;
-}
-
-
-.work-content p {
-    margin: 0 0 20px;
-
-    color: var(--color-text-sub);
-
-    font-size: 14px;
-
-    line-height: 2;
 }
 
 
@@ -280,26 +246,6 @@
     height: auto;
 
     margin: 50px 0;
-}
-
-
-/* ========================================
-   Links
-======================================== */
-
-.work-content a {
-    color: #aaa;
-
-    text-decoration: underline;
-
-    text-underline-offset: 4px;
-
-    transition: color 0.25s ease;
-}
-
-
-.work-content a:hover {
-    color: #fff;
 }
 
 
@@ -360,16 +306,8 @@
 .back-link {
     font-size: 10px;
 
-    color: var(--color-text-sub);
 
     letter-spacing: var(--letter-spacing-nav);
-
-    transition: color 0.25s ease;
-}
-
-
-.back-link:hover {
-    color: #fff;
 }
 
 
@@ -378,7 +316,6 @@
 ======================================== */
 
 @media (max-width: 800px) {
-
     .work-header {
         padding-top: 50px;
 
@@ -428,5 +365,4 @@
     .work-footer {
         margin-top: 100px;
     }
-
 }

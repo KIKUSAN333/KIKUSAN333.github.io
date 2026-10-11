@@ -37,14 +37,8 @@
 
 .navbar-menu a {
     font-size: 10px;
-    color: var(--color-text-sub);
+
     letter-spacing: 0.14em;
-
-    transition: color 0.25s ease;
-}
-
-.navbar-menu a:hover {
-    color: #fff;
 }
 
 
@@ -96,13 +90,10 @@ main {
 
 .footer-menu a {
     font-size: 9px;
-    color: var(--color-text-sub);
+
     letter-spacing: 0.12em;
 }
 
-.footer-menu a:hover {
-    color: #fff;
-}
 
 .footer-social {
     display: flex;
@@ -115,15 +106,10 @@ main {
 .footer-social a {
     overflow-wrap: anywhere;
     font-size: 10px;
-    color: var(--color-text-sub);
+
     letter-spacing: 0.14em;
-
-    transition: color 0.25s ease;
 }
 
-.footer-social a:hover {
-    color: #fff;
-}
 
 .footer-copyright {
     margin-left: auto;
@@ -139,7 +125,6 @@ main {
 ======================================== */
 
 @media (max-width: 600px) {
-
     .navbar {
         height: 60px;
         padding: 0 25px;

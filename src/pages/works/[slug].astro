@@ -37,21 +37,21 @@ const { Content } = await render(work);
 
                 <span>WORK / {work.data.year}</span>
 
-                <a href="/works/">
+                <a href="/works/" class="quiet-link">
                     ALL WORKS ↗
                 </a>
 
             </div>
 
 
-            <h1>
+            <h1 class="display-heading">
                 {work.data.title}
             </h1>
 
 
             <div class="work-header-bottom">
 
-                <p class="work-description">
+                <p class="work-description body-copy-text">
                     {work.data.description}
                 </p>
 
@@ -90,7 +90,7 @@ const { Content } = await render(work);
 
         <!-- Content -->
 
-        <div class="work-content">
+        <div class="work-content body-copy prose-links">
             
             <h2>{work.data.title}</h2>
 
@@ -103,7 +103,7 @@ const { Content } = await render(work);
 
         <div class="work-footer">
 
-            <a href="/works/" class="back-link">← BACK TO WORKS</a>
+            <a href="/works/" class="back-link quiet-link">← BACK TO WORKS</a>
 
         </div>
 
