@@ -43,41 +43,6 @@
     color: var(--color-text-sub);
 }
 
-.about-title-line {
-    display: inline-block;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .about-title-line {
-        animation: about-enter 800ms cubic-bezier(0.16, 1, 0.3, 1) 100ms backwards;
-    }
-
-    .about-title-line:nth-of-type(2) {
-        animation-delay: 240ms;
-    }
-
-    .about-hero-top,
-    .about-hero-description {
-        animation: about-enter 700ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
-    }
-
-    .about-hero-description {
-        animation-delay: 380ms;
-    }
-}
-
-@keyframes about-enter {
-    from {
-        opacity: 0;
-        transform: translateY(28px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
 .about-hero-description {
     position: absolute;
 

@@ -17,7 +17,7 @@ const recentWorks = works
 
     <section class="hero">
 
-        <div class="hero-top">
+        <div class="hero-top enter-label">
             <span>GAME DEVELOPER</span>
             <span>HCI RESEARCHER</span>
         </div>
@@ -25,21 +25,21 @@ const recentWorks = works
         <div class="hero-main">
 
             <h1>
-                <span class="hero-title-line">CREATE</span>
+                <span class="enter-title">CREATE</span>
                 <br />
-                <span class="hero-title-line hero-title-line--muted">INTERACTION</span>
+                <span class="enter-title hero-title-line--muted">INTERACTION</span>
                 <br />
-                <span class="hero-title-line">THAT FEELS.</span>
+                <span class="enter-title">THAT FEELS.</span>
             </h1>
 
         </div>
 
-        <div class="hero-bottom">
+        <div class="hero-bottom enter-label enter-late">
             <span>PORTFOLIO / 2026</span>
             <span>SCROLL TO EXPLORE ↓</span>
         </div>
 
-        <div class="hero-image">
+        <div class="hero-image enter-image">
             <img src="../images/icons/icon.jpg"alt="KIKU portfolio hero image"/>
         </div>
 
@@ -183,17 +183,28 @@ const recentWorks = works
 
         <div class="contact-content">
 
-            <p class="contact-label">HAVE A PROJECT?</p>
-
             <h2>
                 LET'S
                 <br />
                 TALK.
             </h2>
 
-            <a href="https://X.com/kikukikukiku333" target="_blank" rel="noopener noreferrer" class="contact-link">
-                X ↗
-            </a>
+            <p class="contact-description">
+                制作や研究に関するご相談など、お気軽にご連絡ください。
+            </p>
+
+            <div class="contact-methods">
+                <a href="mailto:soundofzero333@gmail.com" class="contact-link" aria-describedby="contact-email-note">
+                    <span class="contact-method-label">EMAIL</span>
+                    <span class="contact-method-value">soundofzero333@gmail.com</span>
+                    <span class="contact-method-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://X.com/kikukikukiku333" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="contact-method-label">X / SOCIAL</span>
+                    <span class="contact-method-value">@kikukikukiku333</span>
+                    <span class="contact-method-arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
 
         </div>
 
@@ -208,6 +219,6 @@ const recentWorks = works
     initScrollReveal(
         ".about .section-label, .about-content h2, .about-text > *, " +
         ".works .section-label, .works-heading > *, .featured-work, " +
-        ".statement p, .contact .section-label, .contact-content > *",
+        ".statement p, .contact .section-label, .contact-content > :not(.contact-methods), .contact-methods > *",
     );
 </script>

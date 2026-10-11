@@ -106,11 +106,14 @@ main {
 
 .footer-social {
     display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
     gap: 25px;
     margin-left: auto;
 }
 
 .footer-social a {
+    overflow-wrap: anywhere;
     font-size: 10px;
     color: var(--color-text-sub);
     letter-spacing: 0.14em;

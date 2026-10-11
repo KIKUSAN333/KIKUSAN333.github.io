@@ -1,0 +1,54 @@
+/* ページ共通の登場演出。見た目や配置は各ページのCSSで指定します。 */
+.enter-title {
+    display: inline-block;
+    --enter-delay: 100ms;
+}
+
+.enter-title:nth-of-type(2) {
+    --enter-delay: 240ms;
+}
+
+.enter-title:nth-of-type(3) {
+    --enter-delay: 380ms;
+}
+
+.enter-late {
+    --enter-delay: 500ms;
+}
+
+/* 「動きを減らす」が無効な場合のみ再生し、演出なしでも内容を表示します。 */
+@media (prefers-reduced-motion: no-preference) {
+    .enter-title,
+    .enter-label {
+        animation: enter-rise 800ms cubic-bezier(0.16, 1, 0.3, 1)
+            var(--enter-delay, 0ms) backwards;
+    }
+
+    .enter-label {
+        --enter-distance: 8px;
+        animation-duration: 650ms;
+    }
+
+    .enter-image {
+        animation: enter-scale 1100ms cubic-bezier(0.16, 1, 0.3, 1) 100ms backwards;
+    }
+}
+
+@keyframes enter-rise {
+    from {
+        opacity: 0;
+        transform: translateY(var(--enter-distance, 28px));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 終了時は要素本来の不透明度と大きさに戻します。 */
+@keyframes enter-scale {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+}
