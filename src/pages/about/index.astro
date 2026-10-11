@@ -13,9 +13,9 @@ import "../../styles/about.css";
         </div>
 
         <h1>
-            ABOUT
+            <span class="about-title-line">ABOUT</span>
             <br />
-            <span>ME.</span>
+            <span class="about-title-line about-title-line--muted">ME.</span>
         </h1>
 
         <p class="about-hero-description">
@@ -252,3 +252,13 @@ import "../../styles/about.css";
     </section>
 
 </Layout>
+
+<script>
+    import { initScrollReveal } from "../../scripts/scroll-reveal";
+
+    initScrollReveal(
+        ".about-layout .section-label, .about-layout .section-title, " +
+        ".profile-icon, .profile-text > *, .section-text > *, " +
+        ".skills-group > *, .timeline-item",
+    );
+</script>

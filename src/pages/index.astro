@@ -5,6 +5,10 @@ import "../styles/home.css";
 import { getCollection } from "astro:content";
 
 const works = await getCollection("works");
+// 作品の制作時期は年のみのため、同じ年の作品はID順に並べて表示順を固定します。
+const recentWorks = works
+    .sort((a, b) => b.data.year - a.data.year || a.id.localeCompare(b.id, "en"))
+    .slice(0, 3);
 ---
 
 <Layout title="KIKU — Portfolio">
@@ -21,11 +25,11 @@ const works = await getCollection("works");
         <div class="hero-main">
 
             <h1>
-                CREATE
+                <span class="hero-title-line">CREATE</span>
                 <br />
-                <span>INTERACTION</span>
+                <span class="hero-title-line hero-title-line--muted">INTERACTION</span>
                 <br />
-                THAT FEELS.
+                <span class="hero-title-line">THAT FEELS.</span>
             </h1>
 
         </div>
@@ -89,7 +93,7 @@ const works = await getCollection("works");
 
         <div class="section-label">
             <span>02</span>
-            <span>SELECTED WORKS</span>
+            <span>RECENT WORKS</span>
         </div>
 
         <div class="works-content">
@@ -97,7 +101,7 @@ const works = await getCollection("works");
             <div class="works-heading">
 
                 <h2>
-                    Selected
+                    Recent
                     <br />
                     Works.
                 </h2>
@@ -112,23 +116,16 @@ const works = await getCollection("works");
                 <div class="featured-works" id="featured-works">
 
                     {
-                        works.map((work, index) => (
+                        recentWorks.map((work, index) => (
 
                             <a
                                 href={`/works/${work.id}/`}
-                                class:list={[
-                                    "featured-work",
-                                    index < 3 && "is-visible"
-                                ]}
+                                class="featured-work is-visible"
                             >
 
                                 <div class="work-image">
 
                                     <img src={work.data.image} alt={work.data.title}/>
-
-                                    <span class="work-number">
-                                        {String(index + 1).padStart(2, "0")}
-                                    </span>
 
                                     <span class="work-arrow">
                                         ↗
@@ -164,46 +161,11 @@ const works = await getCollection("works");
                 </div>
 
 
-                <div class="featured-controls">
 
-                    <button id="prev-works" aria-label="Previous works">←</button>
-
-                    <div class="work-progress">
-
-                        <span id="current-work">
-                            01
-                        </span>
-
-                        <span>/</span>
-
-                        <span>
-                            {String(works.length).padStart(2, "0")}
-                        </span>
-
-                    </div>
-
-                    <button id="next-works" aria-label="Next works">→</button>
-
-                </div>
 
             </div>
 
         </div>
-
-    </section>
-
-
-    <!-- Statement -->
-
-    <section class="statement">
-
-        <p>
-            CREATE.
-            <br />
-            PLAY.
-            <br />
-            <em>RESEARCH</em>
-        </p>
 
     </section>
 
@@ -241,113 +203,11 @@ const works = await getCollection("works");
 
 
 <script>
+    import { initScrollReveal } from "../scripts/scroll-reveal";
 
-    const cards = Array.from(
-        document.querySelectorAll(".featured-work")
+    initScrollReveal(
+        ".about .section-label, .about-content h2, .about-text > *, " +
+        ".works .section-label, .works-heading > *, .featured-work, " +
+        ".statement p, .contact .section-label, .contact-content > *",
     );
-
-    const nextButton =
-        document.querySelector("#next-works");
-
-    const prevButton =
-        document.querySelector("#prev-works");
-
-    const currentWork =
-        document.querySelector("#current-work");
-
-    const displayCount = 3;
-
-    const intervalTime = 5000;
-
-    let currentIndex = 0;
-
-
-    function showWorks() {
-
-        if (cards.length === 0) {
-            return;
-        }
-
-        cards.forEach((card, index) => {
-
-            const relativeIndex =
-                (index - currentIndex + cards.length)
-                % cards.length;
-
-            if (relativeIndex < displayCount) {
-
-                card.classList.add("is-visible");
-
-            } else {
-
-                card.classList.remove("is-visible");
-
-            }
-
-        });
-
-
-        if (currentWork) {
-
-            currentWork.textContent =
-                String(currentIndex + 1).padStart(2, "0");
-
-        }
-
-    }
-
-
-    function nextWorks() {
-
-        if (cards.length <= displayCount) {
-            return;
-        }
-
-        currentIndex =
-            (currentIndex + displayCount)
-            % cards.length;
-
-        showWorks();
-
-    }
-
-
-    function prevWorks() {
-
-        if (cards.length <= displayCount) {
-            return;
-        }
-
-        currentIndex =
-            (currentIndex - displayCount + cards.length)
-            % cards.length;
-
-        showWorks();
-
-    }
-
-
-    nextButton?.addEventListener(
-        "click",
-        nextWorks
-    );
-
-    prevButton?.addEventListener(
-        "click",
-        prevWorks
-    );
-
-
-    showWorks();
-
-
-    if (cards.length > displayCount) {
-
-        setInterval(
-            nextWorks,
-            intervalTime
-        );
-
-    }
-
 </script>

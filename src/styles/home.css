@@ -60,8 +60,74 @@
 }
 
 
-.hero h1 span {
+.hero h1 .hero-title-line--muted {
     color: var(--color-text-sub);
+}
+
+.hero-title-line {
+    display: inline-block;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero-title-line {
+        animation: home-title-enter 800ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        animation-delay: 100ms;
+    }
+
+    .hero-title-line:nth-of-type(2) {
+        animation-delay: 240ms;
+    }
+
+    .hero-title-line:nth-of-type(3) {
+        animation-delay: 380ms;
+    }
+
+    .hero-top,
+    .hero-bottom {
+        animation: home-label-enter 650ms ease-out backwards;
+    }
+
+    .hero-bottom {
+        animation-delay: 500ms;
+    }
+
+    .hero-image {
+        animation: home-image-enter 1100ms cubic-bezier(0.16, 1, 0.3, 1) 100ms backwards;
+    }
+}
+
+@keyframes home-title-enter {
+    from {
+        opacity: 0;
+        transform: translateY(0.45em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes home-label-enter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes home-image-enter {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 0.8;
+        transform: scale(1);
+    }
 }
 
 
