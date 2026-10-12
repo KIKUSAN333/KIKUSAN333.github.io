@@ -11,7 +11,7 @@ const works = defineCollection({
     schema: z.object({
         title: z.string(),
         description: z.string(),
-        year: z.number(),
+        date: z.string().regex(/^(\d{4}(-(?:0[1-9]|1[0-2]))?)?$/, "date must be YYYY, YYYY-MM, or empty"),
         image: z.string(),
         technologies: z.array(z.string()),
     }),

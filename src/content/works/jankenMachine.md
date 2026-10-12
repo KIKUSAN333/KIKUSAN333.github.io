@@ -1,7 +1,7 @@
 ---
 title: "じゃんけんましーん"
 description: "じゃんけんをすることのできる機械"
-year: 2026
+date: "2024-07"
 technologies:
   - "Arduino"
 image: "/images/works/jyankenMachine.gif"

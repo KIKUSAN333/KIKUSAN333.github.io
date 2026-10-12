@@ -2,7 +2,7 @@
 
 title: "TAIYAKIKUN"
 description: "文化祭にて売り上げ可視化システム"
-year: 2025
+date: "2022-06"
 technologies:
 - "UnrealEngine"
 image: "/images/works/TAIYAKIKUN.gif"

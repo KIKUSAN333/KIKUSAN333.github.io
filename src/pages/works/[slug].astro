@@ -35,7 +35,7 @@ const { Content } = await render(work);
 
             <div class="work-header-top">
 
-                <span>WORK / {work.data.year}</span>
+                <span>WORK / {work.data.date.replace(/^(\d{4})-(\d{2})$/, (_, year, month) => `${year}年${Number(month)}月`).replace(/^(\d{4})$/, "$1年")}</span>
 
                 <a href="/works/" class="quiet-link">
                     ALL WORKS ↗

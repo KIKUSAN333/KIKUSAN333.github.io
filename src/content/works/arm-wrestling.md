@@ -2,7 +2,7 @@
 
 title: "連打腕相撲ゲーム"
 description: "PVEとPVPができる連打腕相撲ゲーム"
-year: 2025
+date: "2025-07"
 technologies:
 - "Java"
 image: "/images/works/armWresling.gif"

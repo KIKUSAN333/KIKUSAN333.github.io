@@ -2,7 +2,7 @@
 
 title: "CLI剣道格ゲー"
 description: "CLIで動く剣道格ゲー"
-year: 2025
+date: "2025-06"
 technologies:
 - "Java"
 image: "/images/works/KendoCLI.gif"

@@ -2,7 +2,7 @@
 
 title: "TydingUp"
 description: "おもちゃをおもちゃ箱まで運ぶ3Dアクションゲーム"
-year: 2026
+date: "2025-11"
 technologies:
 - "Unity"
 - "C#"

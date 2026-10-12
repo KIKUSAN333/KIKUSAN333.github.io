@@ -2,7 +2,7 @@
 
 title: "Tredecim"
 description: "崩れた筆跡から書かれている文字を読み取る文字クイズゲーム"
-year: 2026
+date: "2026-08"
 technologies:
 - "Unity"
 - "C#"

@@ -2,7 +2,7 @@
 
 title: "Tetjong"
 description: "テトリスと麻雀を組み合わせた落ち物パズルゲーム"
-year: 2025
+date: "2025-09"
 technologies:
 - "Unity"
 - "C#"

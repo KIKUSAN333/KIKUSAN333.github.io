@@ -2,7 +2,7 @@
 
 title: "花うらない"
 description: "花の力を使いながら森を探索し、出口を目指すローグライク脱出ゲーム"
-year: 2026
+date: "2026-03"
 technologies:
 - "Unity"
 - "C#"

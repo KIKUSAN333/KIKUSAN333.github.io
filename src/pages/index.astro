@@ -138,7 +138,7 @@ const works = await getCollection("works");
 
                                     <div class="work-meta">
 
-                                        <span>{work.data.year}</span>
+                                        <span>{work.data.date.replace(/^(\d{4})-(\d{2})$/, (_, year, month) => `${year}年${Number(month)}月`).replace(/^(\d{4})$/, "$1年")}</span>
 
                                         <span>{work.data.technologies.join(" / ")}</span>
 

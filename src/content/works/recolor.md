@@ -1,7 +1,7 @@
 ---
 title: "ReColoR"
 description: "色の一部が失われてしまったものの色を合わせるゲーム"
-year: 2026
+date: "2026-08"
 technologies:
   - "Unity"
   - "C#"

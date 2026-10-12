@@ -5,7 +5,7 @@ import "../../styles/works.css";
 import { getCollection } from "astro:content";
 const works = await getCollection("works");
 const sortedWorks = works.sort(
-    (a, b) => b.data.year - a.data.year || a.id.localeCompare(b.id, "en"),
+    (a, b) => b.data.date.localeCompare(a.data.date) || a.id.localeCompare(b.id, "en"),
 );
 ---
 <Layout title="Works">

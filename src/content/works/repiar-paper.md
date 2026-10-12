@@ -1,7 +1,7 @@
 ---
 title: "RepairPaper"
 description: "ばらばらになってしまった紙を修理するパズルゲーム"
-year: 2025
+date: "2025-11"
 technologies:
   - "Unity"
   - "C#"

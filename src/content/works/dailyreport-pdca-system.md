@@ -2,7 +2,7 @@
 
 title: "日報によるPDCAサイクル支援システム"
 description: "お店の日報を活用して全体のPDCAサイクルを支援するシステム"
-year: 2025
+date: "2026-02"
 technologies:
 - "Django"
 - "Python"

@@ -1,7 +1,7 @@
 ---
 title: "CLI鬼ごっこ"
 description: "壁越えとワープで駆け引きを楽しむ、2人対戦のCLI鬼ごっこゲーム"
-year: 2025
+date: "2025-02"
 technologies:
   - "C"
 image: "/images/works/TagGame.gif"

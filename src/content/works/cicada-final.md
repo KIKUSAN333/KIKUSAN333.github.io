@@ -2,7 +2,7 @@
 
 title: "Cicada Final"
 description: "セミファイナルをテーマにしたゲーム"
-year: 2026
+date: "2026-02"
 technologies:
 - "Unity"
 - "C#"
