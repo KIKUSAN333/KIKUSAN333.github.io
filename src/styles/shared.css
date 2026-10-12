@@ -11,7 +11,7 @@
 
 /* ページ上部・下部の補助ラベル */
 .hero-caption {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: var(--caption-spacing, var(--letter-spacing-nav));
     color: var(--color-text-sub);
 }
@@ -27,7 +27,7 @@
     flex-direction: var(--section-label-direction, row);
     gap: var(--section-label-gap, 20px);
     margin-bottom: var(--section-label-margin, 45px);
-    font-size: var(--section-label-size, 9px);
+    font-size: var(--section-label-size, 12px);
     letter-spacing: var(--letter-spacing-label);
     color: var(--color-text-sub);
 }
@@ -36,14 +36,14 @@
     --section-label-direction: column;
     --section-label-gap: 4px;
     --section-label-margin: 0;
-    --section-label-size: 10px;
+    --section-label-size: 12px;
 }
 
 /* 紹介文の共通書式 */
 .body-copy p,
 .body-copy-text {
     margin: 0 0 var(--body-copy-gap, 20px);
-    font-size: var(--body-copy-size, 14px);
+    font-size: var(--body-copy-size, 16px);
     line-height: 2;
     color: var(--color-text-sub);
 }
@@ -51,8 +51,8 @@
 /* セクション見出し。サイズ・余白・必要な書式の差だけをページ側で指定します。 */
 .section-heading,
 .body-copy h2 {
-    line-height: var(--section-heading-line-height, 0.9);
-    letter-spacing: var(--section-heading-spacing, -0.07em);
+    line-height: var(--section-heading-line-height, 1.2);
+    letter-spacing: var(--section-heading-spacing, -0.035em);
     font-weight: var(--section-heading-weight, 800);
 }
 
@@ -68,25 +68,25 @@
     display: inline-block;
     padding-bottom: 5px;
     border-bottom: 1px solid var(--color-text-sub);
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: var(--letter-spacing-nav);
     transition: color 0.25s, border-color 0.25s;
 }
 
 .text-link:hover {
-    border-color: #fff;
+    border-color: var(--color-text-main);
 }
 
 /* Markdown本文内のリンク */
 .prose-links a {
-    color: #aaa;
+    color: var(--color-text-main);
     text-decoration: underline;
     text-underline-offset: 4px;
     transition: color 0.25s ease;
 }
 
 :is(.quiet-link, .quiet-links a, .text-link, .prose-links a, .contact-link):is(:hover, :focus-visible) {
-    color: #fff;
+    color: var(--color-text-main);
 }
 
 :is(.quiet-link, .quiet-links a, .text-link, .prose-links a, .contact-link):focus-visible {

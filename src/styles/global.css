@@ -1,21 +1,21 @@
 :root {
     /* Colors */
-    --color-bg: #090909;
-    --color-text-main: #f1f1ed;
-    --color-text-sub: #777777;
-    --color-border: #292929;
+    --color-bg: #fafafa;
+    --color-text-main: #202020;
+    --color-text-sub: #595959;
+    --color-border: #d8d8d8;
 
     /* Typography */
-    --font-heading-weight: 900;
-    --font-heading-line-height: 0.78;
-    --font-heading-letter-spacing: -0.08em;
+    --font-heading-weight: 700;
+    --font-heading-line-height: 1.12;
+    --font-heading-letter-spacing: -0.045em;
 
     --letter-spacing-label: 0.16em;
     --letter-spacing-nav: 0.15em;
     --letter-spacing-meta: 0.08em;
 
     /* Layout / Spacing */
-    --padding-container-x: 5vw;
+    --padding-container-x: max(24px, calc((100vw - 1200px) / 2));
 }
 
 * {
@@ -24,6 +24,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -45,4 +46,21 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--color-text-main);
+    outline-offset: 5px;
+}
+
+::selection {
+    background: #202020;
+    color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
 }

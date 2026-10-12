@@ -6,7 +6,6 @@
     padding-bottom: 150px;
 }
 
-
 /* ========================================
    Header
 ======================================== */
@@ -25,7 +24,6 @@
     border-bottom: 1px solid var(--color-border);
 }
 
-
 .work-header-top {
     display: flex;
 
@@ -43,18 +41,15 @@
     z-index: 2;
 }
 
-
 .work-header-top a {
     transition:
         color 0.25s ease,
         padding-left 0.25s ease;
 }
 
-
 .work-header-top a:hover {
     padding-left: 8px;
 }
-
 
 /* ========================================
    Title
@@ -69,12 +64,10 @@
 
     font-size: clamp(70px, 14vw, 190px);
 
-
     overflow-wrap: anywhere;
 
     text-align: center;
 }
-
 
 /* ========================================
    Header Bottom
@@ -101,11 +94,9 @@
     max-width: 550px;
 }
 
-
 /* ========================================
    Meta
 ======================================== */
-
 
 .work-meta {
     justify-self: end;
@@ -156,7 +147,6 @@
     letter-spacing: var(--letter-spacing-meta);
 }
 
-
 /* ========================================
    Main Image
 ======================================== */
@@ -166,7 +156,6 @@
 
     max-width: 1200px;
 }
-
 
 .work-image img {
     display: block;
@@ -180,7 +169,6 @@
     object-fit: contain;
 }
 
-
 /* ========================================
    Content
 ======================================== */
@@ -192,7 +180,6 @@
     margin: 0 auto;
 }
 
-
 .work-content h2 {
     margin: 100px 0 30px;
 
@@ -203,7 +190,6 @@
     font-size: clamp(35px, 5vw, 60px);
 }
 
-
 .work-content h3 {
     margin: 60px 0 20px;
 
@@ -213,7 +199,6 @@
 
     letter-spacing: -0.03em;
 }
-
 
 .work-content ul,
 .work-content ol {
@@ -228,11 +213,9 @@
     line-height: 2;
 }
 
-
 .work-content li {
     margin-bottom: 5px;
 }
-
 
 /* ========================================
    Content Images
@@ -248,7 +231,6 @@
     margin: 50px 0;
 }
 
-
 /* ========================================
    Code
 ======================================== */
@@ -263,7 +245,6 @@
     font-size: 0.9em;
 }
 
-
 .work-content pre {
     overflow-x: auto;
 
@@ -276,7 +257,6 @@
     border: 1px solid var(--color-border);
 }
 
-
 .work-content pre code {
     padding: 0;
 
@@ -286,7 +266,6 @@
 
     line-height: 1.7;
 }
-
 
 /* ========================================
    Work Footer
@@ -302,14 +281,11 @@
     border-top: 1px solid var(--color-border);
 }
 
-
 .back-link {
     font-size: 10px;
 
-
     letter-spacing: var(--letter-spacing-nav);
 }
-
 
 /* ========================================
    Mobile
@@ -322,16 +298,13 @@
         padding-bottom: 70px;
     }
 
-
     .work-header-top {
         margin-bottom: 80px;
     }
 
-
     .work-header h1 {
         font-size: clamp(60px, 18vw, 120px);
     }
-
 
     .work-header-bottom {
         grid-template-columns: 1fr;
@@ -341,28 +314,106 @@
         margin-top: 60px;
     }
 
-
     .work-meta {
         justify-self: start;
     }
-
 
     .work-image {
         margin: 50px auto 90px;
     }
 
-
     .work-content h2 {
         margin-top: 70px;
     }
-
 
     .work-content h3 {
         margin-top: 45px;
     }
 
-
     .work-footer {
         margin-top: 100px;
     }
+}/* Detail pages use the same restrained type scale. */
+.work-header {
+    min-height: 540px;
+    padding-top: 120px;
+    gap: 48px;
+}
+
+.work-header-top, .work-meta > span, .work-meta li, .back-link {
+    font-size: 13px;
+}
+
+.work-header h1 {
+    font-size: clamp(40px, 7vw, 96px);
+    text-align: left;
+}
+
+.work-header-bottom {
+    gap: 40px;
+}
+
+.work-content, .work-footer {
+    width: min(800px, calc(100% - 48px));
+}
+
+.work-content {
+    --section-heading-spacing: -.02em;
+}
+
+.work-content h2 {
+    font-size: clamp(28px, 4vw, 40px);
+}
+
+.work-content h3 {
+    line-height: 1.6;
+}
+
+.work-content ul, .work-content ol {
+    font-size: 16px;
+}
+
+.work-content code {
+    background: #eeeeee;
+    color: #333;
+}
+
+.work-content pre code {
+    font-size: 14px;
+    background: transparent;
+}
+
+.work-image {
+    width: min(1200px, calc(100% - 48px));
+    margin-top: 56px;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 800px) {
+    .work-header {
+        padding-top: 110px;
+    }
+
+    .work-header-top {
+        margin-bottom: 0;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .work-header h1 {
+        font-size: clamp(36px, 10vw, 60px);
+    }
+
+    .work-header-bottom {
+        margin-top: 0;
+    }
+
+    .work-meta {
+        text-align: left;
+    }
+
+    .work-meta ul {
+        justify-content: flex-start;
+    }
+
 }

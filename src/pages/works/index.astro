@@ -4,22 +4,36 @@ import "../../styles/works.css";
 
 import { getCollection } from "astro:content";
 const works = await getCollection("works");
+const sortedWorks = works.sort(
+    (a, b) => b.data.year - a.data.year || a.id.localeCompare(b.id, "en"),
+);
 ---
 <Layout title="Works">
 
-    <header>
-        <h1>Works</h1>
+    <header class="works-page-header">
+        <div class="hero-caption hero-caption-row enter-label">
+            <span>PORTFOLIO / WORKS</span>
+            <span>{works.length} PROJECTS</span>
+        </div>
+        <h1 class="display-heading enter-title">Works.</h1>
+        <p class="body-copy-text enter-label enter-late">ゲーム制作やインタラクションを通して、探求してきた体験。</p>
     </header>
 
-    <div class="works-grid">
+    <div class="works-grid" aria-label="作品一覧">
 
         {
-            works.map((work) => (
+            sortedWorks.map((work) => (
                 <a href={`/works/${work.id}/`} class="work-card">
                     <img
                         src={work.data.image}
                         alt={work.data.title}
+                        loading="lazy"
                     />
+                    <div class="work-card-heading">
+                        <h2>{work.data.title}</h2>
+                        <span aria-hidden="true">↗</span>
+                    </div>
+                    <p class="work-card-year">{work.data.year}</p>
                 </a>
             ))
         }
@@ -27,3 +41,9 @@ const works = await getCollection("works");
     </div>
 
 </Layout>
+
+<script>
+    import { initScrollReveal } from "../../scripts/scroll-reveal";
+
+    initScrollReveal(".works-grid .work-card");
+</script>

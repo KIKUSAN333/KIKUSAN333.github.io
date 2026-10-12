@@ -12,13 +12,11 @@
     position: relative;
 }
 
-
 .about-hero h1 {
     margin: 130px 0 0;
 
     font-size: clamp(80px, 15vw, 190px);
 }
-
 
 .about-hero-description {
     position: absolute;
@@ -28,7 +26,6 @@
 
     margin: 0;
 }
-
 
 /* ========================================
    About Layout
@@ -52,11 +49,9 @@
     align-items: start;
 }
 
-
 .about-main {
     min-width: 0;
 }
-
 
 /* ========================================
    Section
@@ -65,7 +60,6 @@
 .about-section {
     margin-bottom: 140px;
 }
-
 
 /* ========================================
    Profile
@@ -81,7 +75,6 @@
     align-items: start;
 }
 
-
 .profile-icon {
     width: 140px;
     height: 140px;
@@ -95,7 +88,6 @@
     filter: grayscale(100%);
 }
 
-
 /* ========================================
    Section Title
 ======================================== */
@@ -108,11 +100,9 @@
     font-size: clamp(50px, 7vw, 90px);
 }
 
-
 .section-text {
     max-width: 650px;
 }
-
 
 /* ========================================
    Skills
@@ -121,7 +111,6 @@
 .skills-group {
     margin-bottom: 70px;
 }
-
 
 .skills-group h3 {
     margin: 0 0 20px;
@@ -135,7 +124,6 @@
     letter-spacing: 0.14em;
 }
 
-
 .skills-group img {
     display: block;
 
@@ -145,7 +133,6 @@
 
     margin-bottom: 20px;
 }
-
 
 .skills-group p {
     max-width: 650px;
@@ -159,7 +146,6 @@
     line-height: 1.8;
 }
 
-
 /* ========================================
    Timeline
 ======================================== */
@@ -172,13 +158,11 @@
     align-self: start;
 }
 
-
 .timeline {
     position: relative;
 
     padding-left: 30px;
 }
-
 
 .timeline::before {
     content: "";
@@ -195,7 +179,6 @@
     background: var(--color-border);
 }
 
-
 .timeline-item {
     position: relative;
 
@@ -207,7 +190,6 @@
 
     margin-bottom: 55px;
 }
-
 
 .timeline-item::before {
     content: "";
@@ -226,7 +208,6 @@
     background: var(--color-text-sub);
 }
 
-
 .timeline-item time {
     font-size: 10px;
 
@@ -234,7 +215,6 @@
 
     letter-spacing: var(--letter-spacing-meta);
 }
-
 
 .timeline-item h3 {
     margin: 0 0 8px;
@@ -246,7 +226,6 @@
     font-weight: 600;
 }
 
-
 .timeline-item p {
     margin: 0;
 
@@ -256,7 +235,6 @@
 
     line-height: 1.8;
 }
-
 
 /* ========================================
    Mobile
@@ -269,11 +247,9 @@
         padding-top: 50px;
     }
 
-
     .about-hero h1 {
         margin-top: 120px;
     }
-
 
     .about-layout {
         grid-template-columns: 1fr;
@@ -283,11 +259,9 @@
         padding-top: 90px;
     }
 
-
     .timeline-section {
         position: static;
     }
-
 
     .profile {
         grid-template-columns: 1fr;
@@ -295,19 +269,71 @@
         gap: 30px;
     }
 
-
     .profile-icon {
         width: 100px;
         height: 100px;
     }
 
-
     .profile-text h2 {
         margin-bottom: 35px;
     }
 
-
     .about-section {
         margin-bottom: 100px;
     }
+}
+/* Comfortable typography for profile and timeline. */
+.about-hero {
+    min-height: 400px;
+    padding-top: 120px;
+}
+
+.about-hero h1 {
+    margin-top: 36px;
+    font-size: clamp(56px, 9vw, 112px);
+}
+
+.about-hero-description {
+    max-width: calc(100% - 48px);
+    font-size: 16px;
+}
+
+.about-layout {
+    gap: 64px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.section-title {
+    --section-heading-line-height: 1.2;
+    font-size: clamp(36px, 4vw, 56px);
+}
+
+.skills-group h3, .timeline-item time {
+    font-size: 13px;
+}
+
+.skills-group p, .timeline-item p {
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.timeline-item h3 {
+    line-height: 1.6;
+}
+
+.timeline-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 1000px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-section {
+        position: static;
+    }
+
 }

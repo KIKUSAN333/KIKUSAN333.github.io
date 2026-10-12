@@ -41,7 +41,6 @@
     letter-spacing: 0.14em;
 }
 
-
 /* ========================================
    Main
 ======================================== */
@@ -51,7 +50,6 @@ main {
     margin: 0;
     padding: 0;
 }
-
 
 /* ========================================
    Footer
@@ -94,7 +92,6 @@ main {
     letter-spacing: 0.12em;
 }
 
-
 .footer-social {
     display: flex;
     flex-wrap: wrap;
@@ -110,7 +107,6 @@ main {
     letter-spacing: 0.14em;
 }
 
-
 .footer-copyright {
     margin-left: auto;
 
@@ -118,7 +114,6 @@ main {
     color: var(--color-text-sub);
     letter-spacing: 0.1em;
 }
-
 
 /* ========================================
    Mobile
@@ -148,4 +143,64 @@ main {
         width: 100%;
         margin-left: 0;
     }
+}
+/* Shared navigation stays readable on both desktop and mobile. */
+.navbar {
+    height: 76px;
+    background: rgba(250, 250, 250, .96);
+}
+
+.navbar-logo {
+    font-size: 18px;
+    letter-spacing: .08em;
+}
+
+.navbar-menu {
+    gap: 32px;
+}
+
+.navbar-menu a {
+    font-size: 14px;
+    letter-spacing: .04em;
+    padding: 10px 0;
+}
+
+.footer-logo {
+    font-size: 15px;
+}
+
+.footer-menu a, .footer-social a, .footer-copyright {
+    font-size: 12px;
+    letter-spacing: .04em;
+}
+
+.footer-inner {
+    flex-wrap: wrap;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        height: 68px;
+        padding: 0 24px;
+    }
+
+    .navbar-menu {
+        gap: 24px;
+    }
+
+    .navbar-menu a {
+        font-size: 14px;
+    }
+
+    .footer-inner {
+        padding: 28px 24px;
+    }
+
+    .footer-social {
+        width: 100%;
+        margin-left: 0;
+    }
+
 }

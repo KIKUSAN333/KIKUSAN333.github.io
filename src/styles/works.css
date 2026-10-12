@@ -1,36 +1,112 @@
-/* ==============================
-   Works
-============================== */
+/* ========================================
+   Works Header
+======================================== */
 
-.works-content {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
+.works-page-header {
+    padding: 130px var(--padding-container-x) 56px;
+    border-bottom: 1px solid var(--color-border);
 }
+
+.works-page-header h1 {
+    margin: 40px 0 24px;
+    font-size: clamp(56px, 9vw, 112px);
+}
+
+.works-page-header p {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   Works Grid
+======================================== */
 
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 40px 20px;
+    padding: 56px var(--padding-container-x) 100px;
 }
 
 .work-card {
     display: block;
+    min-width: 0;
 }
 
 .work-card img {
     display: block;
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 3px;
+    background: #eeeeee;
+    transition: opacity 0.25s ease;
 }
 
-.work-card p {
+.work-card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.work-card-heading h2 {
     margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.work-card-heading span {
+    flex-shrink: 0;
+    color: var(--color-text-sub);
+}
+
+.work-card-year {
+    margin: 6px 0 0;
+    font-size: 13px;
     color: var(--color-text-sub);
 }
 
 .work-card:hover img {
     opacity: 0.8;
+}
+
+/* ========================================
+   Tablet / Mobile
+======================================== */
+
+@media (max-width: 1000px) {
+    .works-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .works-page-header {
+        padding-top: 108px;
+        padding-bottom: 36px;
+    }
+
+    .works-page-header .hero-caption-row {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .works-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px 16px;
+        padding-top: 36px;
+        padding-bottom: 72px;
+    }
+
+    .work-card-heading h2 {
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .work-card img {
+        transition: none;
+    }
 }
