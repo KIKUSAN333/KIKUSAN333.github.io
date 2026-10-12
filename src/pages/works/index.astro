@@ -31,9 +31,8 @@ const sortedWorks = works.sort(
                     />
                     <div class="work-card-heading">
                         <h2>{work.data.title}</h2>
-                        <span aria-hidden="true">↗</span>
                     </div>
-                    <p class="work-card-year">{work.data.year}</p>
+                    <p class="work-card-technologies">{work.data.technologies.join(" / ")}</p>
                 </a>
             ))
         }

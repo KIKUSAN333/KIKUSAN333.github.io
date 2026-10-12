@@ -5,10 +5,6 @@ import "../styles/home.css";
 import { getCollection } from "astro:content";
 
 const works = await getCollection("works");
-// 作品の制作時期は年のみのため、同じ年の作品はID順に並べて表示順を固定します。
-const recentWorks = works
-    .sort((a, b) => b.data.year - a.data.year || a.id.localeCompare(b.id, "en"))
-    .slice(0, 3);
 ---
 
 <Layout title="KIKU — Portfolio">
@@ -93,7 +89,7 @@ const recentWorks = works
 
         <div class="section-label section-label--stacked">
             <span>02</span>
-            <span>RECENT WORKS</span>
+            <span>SELECTED WORKS</span>
         </div>
 
         <div class="works-content">
@@ -101,7 +97,7 @@ const recentWorks = works
             <div class="works-heading">
 
                 <h2 class="section-heading">
-                    Recent
+                    Selected
                     <br />
                     Works.
                 </h2>
@@ -116,20 +112,17 @@ const recentWorks = works
                 <div class="featured-works" id="featured-works">
 
                     {
-                        recentWorks.map((work) => (
+                        works.map((work, index) => (
 
                             <a
                                 href={`/works/${work.id}/`}
                                 class="featured-work"
+                                hidden={index >= 3}
                             >
 
                                 <div class="work-image">
 
-                                    <img class="image-cover" src={work.data.image} alt={work.data.title}/>
-
-                                    <span class="work-arrow">
-                                        ↗
-                                    </span>
+                                    <img class="image-cover" src={work.data.image} alt={work.data.title} loading="lazy" />
 
                                 </div>
 
@@ -215,6 +208,24 @@ const recentWorks = works
 
 <script>
     import { initScrollReveal } from "../scripts/scroll-reveal";
+
+    const featuredWorks = document.querySelector("#featured-works");
+
+    if (featuredWorks) {
+        const cards = Array.from(featuredWorks.querySelectorAll<HTMLAnchorElement>(".featured-work"));
+
+        // 静的サイトでも、ページを開くたびに重複なしの3作品を選びます。
+        for (let i = cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [cards[i], cards[j]] = [cards[j], cards[i]];
+        }
+
+        const selectedCards = cards.slice(0, 3);
+        selectedCards.forEach((card) => {
+            card.hidden = false;
+        });
+        featuredWorks.replaceChildren(...selectedCards);
+    }
 
     initScrollReveal(
         ".about .section-label, .about-content h2, .about-text > *, " +

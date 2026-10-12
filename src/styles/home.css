@@ -88,6 +88,10 @@
     min-width: 0;
 }
 
+.featured-work[hidden] {
+    display: none;
+}
+
 .work-image {
     position: relative;
     aspect-ratio: 4 / 3;
@@ -96,24 +100,11 @@
 }
 
 .work-image img {
-    filter: grayscale(1);
     transition: transform .3s ease;
 }
 
 .featured-work:hover .work-image img {
     transform: scale(1.035);
-}
-
-.work-arrow {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    width: 32px;
-    height: 32px;
-    display: grid;
-    place-items: center;
-    background: #fff;
-    color: #202020;
 }
 
 .work-info {

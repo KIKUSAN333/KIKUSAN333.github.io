@@ -57,15 +57,11 @@
     overflow-wrap: anywhere;
 }
 
-.work-card-heading span {
-    flex-shrink: 0;
-    color: var(--color-text-sub);
-}
-
-.work-card-year {
+.work-card-technologies {
     margin: 6px 0 0;
     font-size: 13px;
     color: var(--color-text-sub);
+    overflow-wrap: anywhere;
 }
 
 .work-card:hover img {
