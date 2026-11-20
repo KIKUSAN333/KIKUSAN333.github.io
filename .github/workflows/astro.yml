@@ -6,6 +6,10 @@ on:
 
   workflow_dispatch:
 
+  schedule:
+    # 09:17 JST on the first day of each month.
+    - cron: "17 0 1 * *"
+
 permissions:
   contents: read
   pages: write

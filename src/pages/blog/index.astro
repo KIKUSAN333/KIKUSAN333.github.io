@@ -1,0 +1,31 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getNoteArticles, noteUrl } from "../../lib/note";
+import "../../styles/blog.css";
+
+const articles = await getNoteArticles();
+---
+
+<Layout title="Blog">
+    <header class="blog-header">
+        <h1 class="display-heading enter-title">Blog.</h1>
+        <p class="body-copy-text enter-label enter-late">ゲーム制作や開発中の気づきを、noteに書いています。</p>
+        <a class="text-link quiet-link" href={noteUrl}>noteのプロフィール</a>
+    </header>
+
+    <ul class="blog-list" aria-label="noteの記事一覧">
+        {articles.map((article) => (
+            <li>
+                <a class="blog-card" href={`${noteUrl}/${article.path}`}>
+                    {article.image && <img src={article.image} alt="" width="640" height="336" />}
+                    <div class="blog-card-copy">
+                        <time datetime={article.date}>{article.date.replaceAll("-", ".")}</time>
+                        <h2 class="section-heading">{article.title}</h2>
+                        {article.summary && <p class="body-copy-text">{article.summary}</p>}
+                        <span class="blog-card-action">noteで読む</span>
+                    </div>
+                </a>
+            </li>
+        ))}
+    </ul>
+</Layout>
