@@ -29,3 +29,9 @@ const articles = await getNoteArticles();
         ))}
     </ul>
 </Layout>
+
+<script>
+    import { initScrollReveal } from "../../scripts/scroll-reveal";
+
+    initScrollReveal(".blog-list .blog-card");
+</script>
