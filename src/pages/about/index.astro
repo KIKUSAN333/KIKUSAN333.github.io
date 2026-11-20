@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import timeline from "../../data/timeline.json";
 import "../../styles/about.css";
 ---
 
@@ -189,62 +190,17 @@ import "../../styles/about.css";
             </div>
 
             <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <time>2023</time>
-
-                    <div>
-                        <h3>University</h3>
-                        <p>
-                            山梨大学工学部コンピュータ理工学科に入学
-                        </p>
+                {timeline.map(({ year, month, title, description }) => (
+                    <div class="timeline-item">
+                        <time datetime={month === null ? undefined : `${year}-${String(month).padStart(2, "0")}`}>
+                            {month === null ? year : `${year}年${month}月`}
+                        </time>
+                        <div>
+                            <h3>{title}</h3>
+                            <p>{description}</p>
+                        </div>
                     </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <time>2024</time>
-
-                    <div>
-                        <h3>G^2</h3>
-                        <p>
-                            一次創作サークルでゲームのチーム開発に取り組む
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <time>2025</time>
-
-                    <div>
-                        <h3>IT Development</h3>
-                        <p>
-                            IT企業でシステム開発のアルバイトを経験
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <time>2026</time>
-
-                    <div>
-                        <h3>HCI Research</h3>
-                        <p>
-                            HCIを中心とした研究に取り組む
-                        </p>
-                    </div>
-
-                </div>
-
+                ))}
             </div>
 
         </aside>

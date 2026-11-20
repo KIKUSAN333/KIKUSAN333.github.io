@@ -323,8 +323,12 @@
 }
 
 .timeline-item {
-    grid-template-columns: 48px minmax(0, 1fr);
+    grid-template-columns: 76px minmax(0, 1fr);
     gap: 16px;
+}
+
+.timeline-item time {
+    white-space: nowrap;
 }
 
 @media (max-width: 1000px) {

@@ -1,0 +1,38 @@
+[
+    {
+        "year": 2023,
+        "month": 4,
+        "title": "University",
+        "description": "山梨大学工学部コンピュータ理工学科に入学"
+    },
+    {
+        "year": 2024,
+        "month": 4,
+        "title": "G^2",
+        "description": "一次創作サークルでゲームのチーム開発に取り組む"
+    },
+    {
+        "year": 2025,
+        "month": 8,
+        "title": "IT Development",
+        "description": "IT企業でシステム開発のアルバイトを経験"
+    },
+    {
+        "year": 2025,
+        "month": 8,
+        "title": "Internship",
+        "description": "ゲーム開発会社でインターンシップで実務経験を積む"
+    },
+    {
+        "year": 2026,
+        "month": 3,
+        "title": "HCI Research",
+        "description": "HCIを中心とした研究に取り組む"
+    },
+    {
+        "year": 2026,
+        "month": 9,
+        "title": "SICHI2026",
+        "description": "学生コンテストSICHI2026に参加する"
+    }
+]
