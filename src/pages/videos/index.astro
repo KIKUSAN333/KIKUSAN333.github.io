@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getYouTubeVideos, youtubeChannelUrl } from "../../lib/youtube";
+import "../../styles/videos.css";
+
+const videos = await getYouTubeVideos().catch((error: unknown) => {
+    console.warn("Could not load the YouTube feed.", error);
+    return null;
+});
+const dateFormat = new Intl.DateTimeFormat("ja-JP", { dateStyle: "medium", timeZone: "Asia/Tokyo" });
+---
+
+<Layout title="Videos">
+    <header class="videos-header">
+        <h1 class="display-heading enter-title">Videos.</h1>
+        <a class="text-link quiet-link enter-label enter-late" href={youtubeChannelUrl}>YouTubeチャンネルを見る</a>
+    </header>
+
+    {videos?.length ? (
+        <ul class="videos-grid" aria-label="YouTubeの新着動画">
+            {videos.map(({ id, title, date }) => (
+                <li>
+                    <a class="video-card" href={`https://www.youtube.com/watch?v=${id}`}>
+                        <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" />
+                        <time datetime={date}>{dateFormat.format(new Date(date))}</time>
+                        <h2 class="section-heading">{title}</h2>
+                    </a>
+                </li>
+            ))}
+        </ul>
+    ) : (
+        <p class="videos-message body-copy-text">
+            {videos ? "公開動画はまだありません。" : "動画一覧を取得できませんでした。YouTubeチャンネルでご覧いただけます。"}
+        </p>
+    )}
+</Layout>
+
+<script>
+    import { initScrollReveal } from "../../scripts/scroll-reveal";
+
+    initScrollReveal(".videos-grid .video-card");
+</script>

@@ -187,7 +187,7 @@ main {
     }
 
     .navbar-menu {
-        gap: 24px;
+        gap: clamp(12px, 4vw, 24px);
     }
 
     .navbar-menu a {
