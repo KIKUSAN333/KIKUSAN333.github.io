@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import SiteIntro from "../components/SiteIntro.astro";
 import "../styles/global.css";
 import "../styles/shared.css";
 import "../styles/animations.css";
@@ -22,6 +23,8 @@ const { title } = Astro.props;
 </head>
 
 <body>
+
+    <SiteIntro />
 
     <Header />
 
