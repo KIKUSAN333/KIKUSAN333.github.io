@@ -1,6 +1,5 @@
 ---
 import "../styles/site-intro.css";
-import introScript from "../scripts/site-intro.js?raw";
 ---
 
 <div id="site-intro" aria-hidden="true">
@@ -29,4 +28,6 @@ import introScript from "../scripts/site-intro.js?raw";
     </div>
 </div>
 
-<script is:inline set:html={introScript}></script>
+<script>
+    import "../scripts/site-intro.ts";
+</script>

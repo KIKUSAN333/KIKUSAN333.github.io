@@ -1,6 +1,9 @@
 (() => {
     if (!window.matchMedia("(prefers-reduced-motion: no-preference)").matches) return;
 
+    const intro = document.getElementById("site-intro");
+    if (!intro) return;
+
     try {
         if (sessionStorage.getItem("kiku-intro-seen")) return;
         sessionStorage.setItem("kiku-intro-seen", "1");
@@ -9,9 +12,8 @@
         return;
     }
 
-    const intro = document.getElementById("site-intro");
-    const pieces = [...intro.querySelectorAll(".piece")];
-    const directions = ["left", "up", "right", "down"];
+    const pieces = [...intro.querySelectorAll<HTMLElement>(".piece")];
+    const directions = ["left", "up", "right", "down"] as const;
     const exits = pieces.map((_, index) => directions[index % directions.length]);
 
     for (let index = exits.length - 1; index > 0; index--) {
